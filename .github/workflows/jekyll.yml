@@ -1,0 +1,32 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Build and Deploy Jekyll site to GitHub Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build and Deploy
+        # Use the action recommended by the theme author
+        uses: jeffreytse/jekyll-deploy-action@v0.6.0
+        with:
+          # This token is provided by Actions, you do not need to create your own token
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # The branch to deploy to.
+          branch: gh-pages
+          # The folder where the Jekyll site is located.
+          jekyll_src: './'
