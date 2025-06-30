@@ -1,0 +1,237 @@
+/* -----------------------------------------------------------------------------
+ * 二次元小清新风格 - 纯配色版本
+ * 只更改配色，保持原有样式结构
+ * -----------------------------------------------------------------------------
+ */
+
+/* CSS变量定义 - 绿色背景 + 蓝色文字 */
+:root {
+  --kawaii-primary: #03045e;        /* 深蓝色 - 主要文字颜色 (原 #0077b6) */
+  --kawaii-secondary: #0077b6;      /* 蓝色 - 辅助文字/链接 (原 #00b4d8) */
+  --kawaii-accent: #90e0ef;         /* 淡蓝色 - 强调色 */
+  --kawaii-dark: #03045e;           /* 深蓝色 - 深色文字 */
+  --kawaii-nav-text: #ffffff;        /* 白色 - 导航栏文字 (新增) */
+  --kawaii-bg-primary: #74c69d;     /* 绿色 - 主要背景色 */
+  --kawaii-bg-secondary: #95d5b2;   /* 淡绿色 - 辅助背景 */
+  --kawaii-bg-light: #d8f3dc;       /* 最淡绿色 - 浅色背景 */
+  --kawaii-main-bg: #cce3de;        /* 主体背景色 - 很淡的薄荷绿 */
+  --kawaii-header-footer-bg: #6B9080; /* 导航与页脚背景色 */
+  --kawaii-pink: #f8bbd9;           /* 保留柔和粉色作为点缀 */
+}
+
+/* 深色模式适配 - OS级 + 手动切换 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --kawaii-primary: #90e0ef;      /* 深色模式下的淡蓝色文字 */
+    --kawaii-secondary: #00b4d8;    /* 深色模式下的蓝色 */
+    --kawaii-accent: #0077b6;       /* 深色模式下的深蓝色 */
+    --kawaii-dark: #caf0f8;         /* 深色模式下的浅色文字 */
+    --kawaii-bg-primary: #2d6a4f;   /* 深色模式下的深绿背景 */
+    --kawaii-bg-secondary: #40916c; /* 深色模式下的绿色背景 */
+    --kawaii-bg-light: #1b4332;     /* 深色模式下的深色背景 */
+    --kawaii-main-bg: #1a1a1a;      /* 深色模式下的主体背景 - 标准深色 */
+    --kawaii-header-footer-bg: #086375; /* 深色模式下的导航与页脚背景 */
+    --kawaii-pink: #ce93d8;         /* 深色模式下的粉色 */
+  }
+}
+
+/* 手动深色模式支持 */
+[data-theme="dark"] {
+  --kawaii-primary: #90e0ef;
+  --kawaii-secondary: #00b4d8;
+  --kawaii-accent: #0077b6;
+  --kawaii-dark: #caf0f8;
+  --kawaii-bg-primary: #2d6a4f;
+  --kawaii-bg-secondary: #40916c;
+  --kawaii-bg-light: #1b4332;
+  --kawaii-main-bg: #1a1a1a;      /* 深色模式下的主体背景 - 标准深色 */
+  --kawaii-header-footer-bg: #086375; /* 深色模式下的导航与页脚背景 */
+  --kawaii-pink: #ce93d8;
+}
+
+/* 手动浅色模式支持 (用于覆盖OS深色模式) */
+[data-theme="light"] {
+  --kawaii-primary: #03045e;
+  --kawaii-secondary: #0077b6;
+  --kawaii-accent: #90e0ef;
+  --kawaii-dark: #03045e;
+  --kawaii-nav-text: #ffffff;
+  --kawaii-bg-primary: #74c69d;
+  --kawaii-bg-secondary: #95d5b2;
+  --kawaii-bg-light: #d8f3dc;
+  --kawaii-main-bg: #cce3de;
+  --kawaii-header-footer-bg: #6B9080; /* 导航与页脚背景色 */
+  --kawaii-pink: #f8bbd9;
+}
+
+
+/* 主要配色调整 */
+
+/* 主体背景颜色 - 使用CSS变量 */
+body {
+  background-color: var(--kawaii-main-bg) !important;
+  color: var(--kawaii-primary) !important; /* 设置默认正文颜色 */
+}
+
+/* 确保主要内容区域背景透明，以显示body背景 */
+.page-content {
+  background-color: transparent !important;
+}
+
+/* 确保包装器也使用正确的背景色 */
+.wrapper {
+  background-color: transparent !important;
+}
+
+/* 确保主体区域使用正确的背景色 */
+.main, section.main {
+  background-color: transparent !important;
+}
+
+/* 页面横幅背景 */
+.page-banner {
+  background-color: transparent !important;
+}
+
+/* 确保文章列表区域背景正确 */
+.articles, .post-list {
+  background-color: transparent !important;
+}
+
+/* 强制覆盖可能的深色模式背景 */
+html {
+  background-color: var(--kawaii-main-bg) !important;
+}
+
+/* 网站标题颜色 - 在导航栏中，使用导航栏字体颜色 */
+.site-title, .site-title a {
+  color: var(--kawaii-nav-text) !important;
+}
+
+/* 标题颜色 */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--kawaii-primary) !important;
+}
+
+/* 链接颜色 */
+a {
+  color: var(--kawaii-secondary) !important;
+}
+
+a:hover {
+  color: var(--kawaii-primary) !important;
+}
+
+/* 按钮颜色 */
+.btn-primary, .btn {
+  background-color: var(--kawaii-bg-primary) !important;
+  border-color: var(--kawaii-bg-primary) !important;
+  color: white !important;
+}
+
+.btn-primary:hover, .btn:hover {
+  background-color: var(--kawaii-bg-secondary) !important;
+  border-color: var(--kawaii-bg-secondary) !important;
+}
+
+/* 导航链接颜色 */
+.site-nav .page-link {
+  color: var(--kawaii-nav-text) !important;
+}
+
+/* 导航链接激活状态 */
+.site-nav .page-link:hover,
+.site-nav .page-link.active {
+  color: var(--kawaii-accent) !important; /* 激活时使用淡蓝色 */
+}
+
+/* 标签颜色 */
+.tag, .badge {
+  background-color: var(--kawaii-pink) !important;
+  color: var(--kawaii-primary) !important;
+}
+
+/* 分页按钮 */
+.pagination .page-link {
+  color: var(--kawaii-secondary) !important;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--kawaii-bg-primary) !important;
+  border-color: var(--kawaii-bg-primary) !important;
+}
+
+/* 代码高亮主题色调整 */
+.highlight {
+  border-left: 4px solid var(--kawaii-primary) !important;
+}
+
+/* 引用块颜色 */
+blockquote {
+  border-left: 4px solid var(--kawaii-primary) !important;
+  color: var(--kawaii-primary) !important;
+}
+
+/* 表格头部颜色 */
+table th {
+  background-color: var(--kawaii-bg-primary) !important;
+  color: white !important;
+}
+
+/* 滚动条颜色 */
+::-webkit-scrollbar-thumb {
+  background-color: var(--kawaii-bg-primary) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--kawaii-bg-secondary) !important;
+}
+
+/* 选择文本颜色 */
+::selection {
+  background-color: var(--kawaii-pink) !important;
+  color: var(--kawaii-primary) !important;
+}
+
+/* 主题切换按钮颜色 */
+.theme-toggle-btn {
+  color: var(--kawaii-primary) !important;
+}
+
+/* 输入框焦点颜色 */
+input:focus, textarea:focus, select:focus {
+  border-color: var(--kawaii-primary) !important;
+  box-shadow: 0 0 0 0.2rem rgba(0, 119, 182, 0.25) !important;
+}
+
+/* 导航栏背景颜色 */
+.site-header {
+  background-color: var(--kawaii-header-footer-bg) !important;
+  border-bottom: 1px solid var(--kawaii-bg-secondary) !important;
+}
+
+/* 导航栏滚动时的背景 */
+.site-header.scrolled, 
+.site-header:not(.transparent) {
+  background-color: var(--kawaii-header-footer-bg) !important;
+}
+
+/* 页脚背景颜色 */
+.site-footer {
+  background-color: var(--kawaii-header-footer-bg) !important;
+  border-top: 1px solid var(--kawaii-bg-secondary) !important;
+  color: var(--kawaii-nav-text) !important;
+}
+
+/* 保持主内容区域为默认浅色背景，便于阅读 */
+
+/* 卡片和容器背景 - 使用淡绿色边框 */
+.post-list-item, .post-card, .card {
+  border: 1px solid var(--kawaii-bg-secondary) !important;
+}
+
+/* 深浅色模式切换按钮区域 */
+.theme-toggle, .theme-toggle-wrapper {
+  background-color: var(--kawaii-bg-light) !important;
+  border: 1px solid var(--kawaii-bg-secondary) !important;
+}

@@ -18,8 +18,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: 我的个人博客
-email: your-email@example.com
+title: Frifan的赛博小窝
+email: 1732967400@qq.com
 description: >- # this means to ignore newlines until "baseurl:"
   欢迎来到我的个人博客，这里分享我的个人经历、学习笔记以及创作内容。
   专注于二次元文化、编程学习和生活感悟。
@@ -51,18 +51,12 @@ reading_time:
   words_per_minute: 200
 
 # Navigation menu
-header:
-  pages:
-    - name: 首页
-      url: /
-    - name: 时光手札
-      url: /personal-experiences/
-    - name: 学习笔记
-      url: /study-notes/
-    - name: 创作
-      url: /creations/
-    - name: 关于
-      url: /about/
+header_pages:
+  - index.html
+  - personal-experiences.md
+  - study-notes.md
+  - creations.md
+  - about.markdown
 
 # Exclude from processing.
 # The following items will not be processed, by default.

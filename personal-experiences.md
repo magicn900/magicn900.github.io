@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: 时光手札
 permalink: /personal-experiences/
 ---

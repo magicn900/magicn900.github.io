@@ -1,5 +1,8 @@
 ---
-layout: page
+layout: default
+title: 关于
+permalink: /about/
+---ayout: page
 title: 关于我
 permalink: /about/
 ---

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: 创作
 permalink: /creations/
 ---
