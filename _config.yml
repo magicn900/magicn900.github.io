@@ -50,6 +50,20 @@ reading_time:
   enable: true
   words_per_minute: 200
 
+# Navigation menu
+header:
+  pages:
+    - name: 首页
+      url: /
+    - name: 时光手札
+      url: /personal-experiences/
+    - name: 学习笔记
+      url: /study-notes/
+    - name: 创作
+      url: /creations/
+    - name: 关于
+      url: /about/
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

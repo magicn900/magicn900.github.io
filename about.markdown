@@ -1,18 +1,29 @@
 ---
 layout: page
-title: About
+title: 关于我
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+## 关于我
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+欢迎来到我的个人博客！
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+我是一个热爱二次元文化、编程技术和创作的博客作者。在这里，我会分享：
 
+### 📝 时光手札
+记录我的成长历程、生活感悟和重要时刻，分享人生路上的点点滴滴。
 
-[jekyll-organization]: https://github.com/jekyll
+### 📚 学习笔记  
+分享我在编程、技术学习和其他领域的心得体会，希望能够帮助到有同样兴趣的朋友。
+
+### 🎨 创作
+展示我的各种创意作品，包括小说、诗歌、绘画等，记录创作路上的思考与灵感。
+
+### 联系我
+
+如果你对我的内容感兴趣，或者想要交流学习，欢迎通过以下方式联系我：
+
+- Email: your-email@example.com
+- GitHub: 等待添加
+
+感谢你的访问，希望我的分享能给你带来一些收获！
