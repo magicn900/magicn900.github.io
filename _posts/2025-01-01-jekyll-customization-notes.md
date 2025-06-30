@@ -2,7 +2,7 @@
 layout: post
 title: "Jekyll 主题定制学习笔记"
 date: 2025-01-01 14:00:00 +0800
-categories: study-notes
+categories: 学习笔记
 tags: [Jekyll, 网站开发, 前端]
 ---
 

@@ -255,3 +255,14 @@ table th {
   background-color: transparent !important;
   border: none !important; /* 移除边框 */
 }
+
+/* 
+  Correctly hide the 'NEW' pseudo-element on visited links by targeting the ::after pseudo-element.
+  This rule applies to the main post list, related posts, and segment pages (like categories/tags).
+*/
+.pagination .post-title a:visited::after,
+.post .post-related ul a:visited::after,
+.page-segments li a:visited::after {
+  background-color: var(--kawaii-main-bg) !important; /* Match the page background */
+  color: var(--kawaii-main-bg) !important; /* Hide the text as well */
+}

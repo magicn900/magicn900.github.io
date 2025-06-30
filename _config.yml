@@ -22,11 +22,11 @@ title: Frifan的赛博小窝
 email: 1732967400@qq.com
 description: >- # this means to ignore newlines until "baseurl:"
   欢迎来到我的个人博客，这里分享我的个人经历、学习笔记以及创作内容。
-  专注于二次元文化、编程学习和生活感悟。
+  专注于小说创作、计算机相关学习和生活感悟。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
-github_username:  
+github_username:  magicn900
 
 # Build settings
 theme: jekyll-theme-yat
@@ -39,8 +39,8 @@ yat:
   
 # Author information
 author:
-  name: 博主
-  bio: 热爱二次元文化，喜欢编程和创作的个人博客作者
+  name: Frifan
+  bio: 喜欢创作的程序员，分享生活与学习的点滴。
   
 # Night mode default
 night_mode: false
@@ -53,10 +53,10 @@ reading_time:
 # Navigation menu
 header_pages:
   - index.html
-  - personal-experiences.md
-  - study-notes.md
-  - creations.md
   - about.markdown
+  - categories.md
+  - archives.md
+  - tags.md
 
 # Exclude from processing.
 # The following items will not be processed, by default.

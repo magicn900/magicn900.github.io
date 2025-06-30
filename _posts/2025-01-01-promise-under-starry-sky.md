@@ -2,7 +2,7 @@
 layout: post
 title: "星空下的约定"
 date: 2025-01-01 20:00:00 +0800
-categories: creations
+categories: 创作
 tags: [小说, 原创, 青春]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: "第一篇时光手札"
 date: 2025-01-01 10:00:00 +0800
-categories: personal-experiences
+categories: 时光手札
 tags: [生活, 感悟]
 ---
 
