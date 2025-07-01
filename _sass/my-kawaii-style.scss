@@ -93,3 +93,12 @@ a {
 
 /* -- 9. 引入 Google Fonts (可选) -- */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&display=swap');
+
+/* -- 10. Banner 标题专属美化 -- */
+.page-banner-heading {
+  color: #fff !important; /* 强制白色，确保在深色背景下清晰 */
+  text-shadow:
+    0 0 10px rgba(233, 30, 99, 0.7), /* 粉色辉光，呼应主题 */
+    0 0 20px rgba(233, 30, 99, 0.5),
+    1px 1px 3px rgba(0, 0, 0, 0.8); /* 深色描边阴影，确保在浅色背景下也清晰 */
+}

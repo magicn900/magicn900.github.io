@@ -266,3 +266,31 @@ table th {
   background-color: var(--kawaii-main-bg) !important; /* Match the page background */
   color: var(--kawaii-main-bg) !important; /* Hide the text as well */
 }
+
+/* --- Banner标题美化 (最终修正版) --- */
+/* 
+  为页面/文章的Banner标题增加文本阴影，确保在各种背景(视频/深色/浅色图片)下的可读性。
+  基于实际HTML结构: .page-banner-inner > .page-banner-default > h1/h2
+*/
+.page-banner .page-banner-inner {
+  text-shadow: none !important; /* 强制移除主题默认的阴影 */
+}
+
+/* 使用正确的HTML结构路径 */
+.page-banner .page-banner-inner .page-banner-default .page-banner-heading,
+.page-banner .page-banner-inner .page-banner-default .page-banner-subheading {
+  color: #fff !important; /* 固定为白色，增强对比 */
+  text-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.8),
+    0 2px 6px rgba(0, 0, 0, 0.6),
+    0 3px 9px rgba(0, 0, 0, 0.4) !important; /* 多层阴影，适应各种背景 */
+}
+
+/* 为子标题单独增加更强的阴影效果 */
+.page-banner .page-banner-inner .page-banner-default .page-banner-subheading {
+  text-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.9),
+    0 2px 4px rgba(0, 0, 0, 0.8),
+    0 3px 6px rgba(0, 0, 0, 0.7),
+    0 4px 8px rgba(0, 0, 0, 0.5) !important; /* 子标题专用：更多层更浓重的阴影 */
+}
