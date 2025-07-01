@@ -9,6 +9,41 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/my-kawaii-style.css' | relative_url }}">
+  <!-- 防止主题闪烁的内联脚本 - 必须在CSS加载后立即执行 -->
+  <script>
+    (function() {
+      var nightModeOption = '{{ site.yat.night_mode | default: "false" }}';
+      var storage = nightModeOption === 'manual' ? localStorage : sessionStorage;
+      var themeData;
+      
+      try {
+        var data = storage.getItem('theme');
+        themeData = JSON.parse(data || '{}');
+      } catch(e) {
+        themeData = { nightShift: false };
+      }
+      
+      // 根据配置和存储的主题设置初始主题，避免闪烁
+      var nightShift = false;
+      
+      if (nightModeOption === 'auto') {
+        var hours = new Date().getHours();
+        nightShift = hours >= 19 || hours <= 7;
+      } else if (nightModeOption === 'manual') {
+        nightShift = themeData.nightShift || false;
+      } else {
+        nightShift = nightModeOption === 'on' || nightModeOption === 'true';
+      }
+      
+      // 如果有存储的主题设置，优先使用
+      if (themeData.nightShift !== undefined) {
+        nightShift = themeData.nightShift;
+      }
+      
+      // 立即设置主题，避免闪烁
+      document.documentElement.setAttribute('data-theme', nightShift ? 'dark' : 'light');
+    })();
+  </script>
   <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}

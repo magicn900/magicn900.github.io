@@ -4,6 +4,21 @@
  * -----------------------------------------------------------------------------
  */
 
+/* 默认浅色主题 - 确保页面加载时使用浅色主题，避免闪烁 */
+html:not([data-theme="dark"]) {
+  --kawaii-primary: #03045e;
+  --kawaii-secondary: #0077b6;
+  --kawaii-accent: #90e0ef;
+  --kawaii-dark: #03045e;
+  --kawaii-nav-text: #ffffff;
+  --kawaii-bg-primary: #74c69d;
+  --kawaii-bg-secondary: #95d5b2;
+  --kawaii-bg-light: #d8f3dc;
+  --kawaii-main-bg: #cce3de;
+  --kawaii-header-footer-bg: #6B9080;
+  --kawaii-pink: #f8bbd9;
+}
+
 /* CSS变量定义 - 绿色背景 + 蓝色文字 */
 :root {
   --kawaii-primary: #03045e;        /* 深蓝色 - 主要文字颜色 (原 #0077b6) */
@@ -19,9 +34,9 @@
   --kawaii-pink: #f8bbd9;           /* 保留柔和粉色作为点缀 */
 }
 
-/* 深色模式适配 - OS级 + 手动切换 */
+/* 深色模式适配 - 仅在手动设置为深色且系统偏好为深色时生效，避免初始闪烁 */
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  html[data-theme="dark"] {
     --kawaii-primary: #90e0ef;      /* 深色模式下的淡蓝色文字 */
     --kawaii-secondary: #00b4d8;    /* 深色模式下的蓝色 */
     --kawaii-accent: #0077b6;       /* 深色模式下的深蓝色 */
@@ -35,12 +50,13 @@
   }
 }
 
-/* 手动深色模式支持 */
-[data-theme="dark"] {
+/* 手动深色模式支持 - 优先级最高 */
+html[data-theme="dark"] {
   --kawaii-primary: #90e0ef;
   --kawaii-secondary: #00b4d8;
   --kawaii-accent: #0077b6;
   --kawaii-dark: #caf0f8;
+  --kawaii-nav-text: #ffffff;
   --kawaii-bg-primary: #2d6a4f;
   --kawaii-bg-secondary: #40916c;
   --kawaii-bg-light: #1b4332;
@@ -49,8 +65,8 @@
   --kawaii-pink: #ce93d8;
 }
 
-/* 手动浅色模式支持 (用于覆盖OS深色模式) */
-[data-theme="light"] {
+/* 手动浅色模式支持 (用于覆盖OS深色模式) - 优先级最高 */
+html[data-theme="light"] {
   --kawaii-primary: #03045e;
   --kawaii-secondary: #0077b6;
   --kawaii-accent: #90e0ef;
