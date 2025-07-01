@@ -224,8 +224,8 @@ table th {
   gap: 5px; /* 按钮之间的间隙 */
 }
 
-/* 导航栏背景颜色 */
-.site-header {
+/* 导航栏背景颜色 - 只在非透明状态设置 */
+.site-header:not(.site-header-transparent) {
   background-color: var(--kawaii-header-footer-bg) !important;
   border-bottom: 1px solid var(--kawaii-bg-secondary) !important;
 }
@@ -234,6 +234,15 @@ table th {
 .site-header.scrolled, 
 .site-header:not(.transparent) {
   background-color: var(--kawaii-header-footer-bg) !important;
+}
+
+/* 修复导航栏收起时的线条问题和视觉跳跃 - 精确定位问题 */
+html[data-scroll-status="top"] header.site-header-transparent {
+  background-color: transparent !important; /* 保持透明背景 */
+  box-shadow: none !important; /* 移除阴影线条 */
+  border-bottom: none !important; /* 移除边框 */
+  margin-top: 0 !important; /* 消除原主题的12px上边距，这是空缺的根源 */
+  transition: background-color 0.05s ease, margin-top 0.1s ease !important; /* 快速透明过渡，保持原有高度动画 */
 }
 
 /* 页脚背景颜色 */
