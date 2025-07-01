@@ -36,7 +36,12 @@ plugins:
 # YAT theme configuration
 yat:
   date_format: "%Y年%m月%d日"
-  
+  # Custom footer content
+  footer_content: >
+    Copyright © 2025 Frifan<br>
+    Powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://github.com/jeffreytse/jekyll-theme-yat">Yat Theme</a><br>
+    Subscribe <a href="/feed.xml">via RSS</a>
+
 # Author information
 author:
   name: Frifan
@@ -77,3 +82,12 @@ header_pages:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# Website copyright information
+copyright: "Copyright © 2025 Frifan"
+
+# Custom footer links
+footer_links:
+  - title: "RSS"
+    url: "/feed.xml"
+    icon: "fas fa-rss"
