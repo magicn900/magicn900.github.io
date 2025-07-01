@@ -7,7 +7,7 @@ banner:
   loop: true
   volume: 0
   start_at: 0
-  image: /assets/videos/longly_cat.gif
+  image: /assets/images/longly_cat.png
   opacity: 0.8
   background: "#000"
   height: "100vh"
