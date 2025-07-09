@@ -355,27 +355,42 @@ article.post .post-content hr,
   align-items: flex-start;
 }
 
+/* 默认布局：图片在右边 */
+.post-excerpt {
+  flex-direction: row;
+}
+
+/* 图片在左边的布局 */
+.post-excerpt.image-left {
+  flex-direction: row;
+}
+
+/* 图片在右边的布局 */
+.post-excerpt.image-right {
+  flex-direction: row-reverse;
+}
+
 .post-image {
-  flex: 0 0 180px;
+  flex: 0 0 240px; /* 增大图片区域 */
   text-decoration: none !important;
 }
 
 .post-image-container {
-  width: 180px;
-  height: 120px;
+  width: 240px; /* 增大图片宽度 */
+  height: 160px; /* 增大图片高度，更接近模板效果 */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid var(--kawaii-bg-secondary);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
 }
 
 .post-image:hover .post-image-container {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .post-text {
@@ -384,18 +399,19 @@ article.post .post-content hr,
   display: flex;
   flex-direction: column;
   gap: 0.5em;
+  min-width: 0; /* 确保文字区域可以收缩 */
 }
 
 .post-excerpt-text {
   margin: 0;
   color: var(--kawaii-primary) !important;
   line-height: 1.6;
-  font-size: 14px;
-  max-height: 96px; /* 调整为4行的高度，留空间给Read More */
+  font-size: 15px; /* 稍微增大字体 */
+  max-height: 128px; /* 调整为5行的高度，匹配更大的图片 */
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 4; /* 限制为4行 */
-  line-clamp: 4; /* 标准属性 */
+  -webkit-line-clamp: 5; /* 限制为5行 */
+  line-clamp: 5; /* 标准属性 */
   -webkit-box-orient: vertical;
 }
 
@@ -407,10 +423,17 @@ article.post .post-content hr,
   margin-top: auto; /* 推到底部 */
 }
 
+/* 当图片在右边时，Read More 按钮左对齐 */
+.post-excerpt.image-right .read_more {
+  align-self: flex-start;
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
-  .post-excerpt {
-    flex-direction: column;
+  .post-excerpt,
+  .post-excerpt.image-left,
+  .post-excerpt.image-right {
+    flex-direction: column !important;
     gap: 1rem;
   }
   
@@ -421,14 +444,19 @@ article.post .post-content hr,
   
   .post-image-container {
     width: 100%;
-    height: 160px;
-    max-width: 280px;
+    height: 180px;
+    max-width: 320px;
   }
   
   .post-excerpt-text {
-    max-height: 64px; /* 移动端减少到4行 */
+    max-height: 80px; /* 移动端减少到3行 */
     -webkit-line-clamp: 3;
     line-clamp: 3;
+    font-size: 14px;
+  }
+  
+  .read_more {
+    align-self: flex-end !important; /* 移动端统一右对齐 */
   }
 }
 

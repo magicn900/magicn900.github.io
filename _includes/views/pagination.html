@@ -27,6 +27,15 @@
     {%- endif -%}
     {%- assign article_excerpt = return -%}
     
+    {%- comment -%}计算布局方向：奇数索引图片在左，偶数索引图片在右{%- endcomment -%}
+    {%- assign post_index = forloop.index -%}
+    {%- assign remainder = post_index | modulo: 2 -%}
+    {%- if remainder == 1 -%}
+      {%- assign layout_class = "image-left" -%}
+    {%- else -%}
+      {%- assign layout_class = "image-right" -%}
+    {%- endif -%}
+    
     <li class="post-item">
       <h2 class="post-title">
         <a class="post-link" href="{{ post_url }}">
@@ -42,9 +51,9 @@
         <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> {{ reading_time }}</span>
       </div>
       
-      <div class="post-excerpt">
+      <div class="post-excerpt {{ layout_class }}">
         {%- if post_image -%}
-        <a class="post-image" href="{{ post_url }}">
+        <a class="post-image" href="{{ post_url }}" title="{{ post.title | escape }}">
           <div class="post-image-container" style="background-image: url({{ post_image | relative_url }})"></div>
         </a>
         {%- endif -%}

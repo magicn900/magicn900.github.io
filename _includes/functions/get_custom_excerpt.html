@@ -18,13 +18,13 @@
 {% else %}
   {% comment %}
   根据是否有图片调整摘要长度：
-  - 有图片时：100字符（约2-3行，与图片高度匹配，留空间给Read More）
-  - 无图片时：180字符（约3-4行，正常长度，留空间给Read More）
+  - 有图片时：140字符（约4-5行，与更大图片高度匹配，留空间给Read More）
+  - 无图片时：200字符（约4-5行，正常长度，留空间给Read More）
   {% endcomment %}
   {% if has_image %}
-    {% assign excerpt_size = 100 %}
+    {% assign excerpt_size = 140 %}
   {% else %}
-    {% assign excerpt_size = 180 %}
+    {% assign excerpt_size = 200 %}
   {% endif %}
 {% endif %}
 
