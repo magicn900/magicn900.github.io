@@ -319,3 +319,21 @@ html[data-scroll-status="top"] header.site-header-transparent {
     0 3px 6px rgba(0, 0, 0, 0.7),
     0 4px 8px rgba(0, 0, 0, 0.5) !important; /* 子标题专用：更多层更浓重的阴影 */
 }
+
+/* --- 分隔线样式修复 --- */
+/* 
+  修复浅色模式下分隔线不明显的问题
+  原主题使用 #ebebeb，在浅色背景下几乎看不见
+  使用更高特异性的选择器和硬编码颜色确保覆盖主题样式
+*/
+article.post .post-content hr,
+.post article .post-content hr,
+.post .post-content hr {
+  height: 2px !important; /* 增加高度 */
+  background-color: var(--kawaii-dark) !important; /* 使用淡绿色 - 硬编码确保生效 */
+  border: none !important;
+  margin: 40px 0 !important; /* 增加上下间距 */
+  border-radius: 1px !important; /* 添加轻微圆角 */
+  opacity: 1 !important; /* 确保不透明 */
+}
+
