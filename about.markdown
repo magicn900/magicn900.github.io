@@ -12,7 +12,7 @@ banner:
   background: "#000"
   height: "100vh"
   min_height: "38vh"
-heading: "我是 Frifan"
+heading: "你好，我是 Frifan！"
 subheading: "目前信息与计算科学专业大三在读，欢迎来到我的个人博客！"
 ---
 ## 关于我

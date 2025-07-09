@@ -57,7 +57,7 @@ reading_time:
 
 # Navigation menu
 header_pages:
-  - index.html
+  - index.markdown
   - about.markdown
   - categories.md
   - archives.md

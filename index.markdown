@@ -3,6 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+title: 首页
 banner: /assets/images/banner.jpg
 heading: "Frifan的赛博小窝"
 subheading: "珍惜当下的时光"

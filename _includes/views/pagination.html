@@ -1,0 +1,72 @@
+{%- if page.paginator -%}
+  {%- assign paginator = page.paginator -%}
+{%- elsif paginator == nil -%}
+  {%- assign paginator = site -%}
+{%- endif -%}
+
+{%- if paginator.posts.size > 0 -%}
+<div class="pagination">
+  <!-- Post list links -->
+  <ul class="post-list">
+    {%- for post in paginator.posts -%}
+    {%- assign date_format = site.yat.date_format | default: "%b %-d, %Y" -%}
+    {%- assign article = post.content -%}
+    {%- assign lang = post.lang -%}
+    {%- include functions.html func='get_reading_time' -%}
+    {%- assign reading_time = return -%}
+    {%- assign post_url = post.url | relative_url -%}
+
+    {%- comment -%}配置文章封面图片{%- endcomment -%}
+    {%- assign post_image = post.excerpt_image | default: post.banner.image | default: post.banner -%}
+    
+    {%- comment -%}使用自定义摘要函数，根据是否有图片调整长度{%- endcomment -%}
+    {%- if post_image -%}
+      {%- include functions/get_custom_excerpt.html params=post article=article has_image=true -%}
+    {%- else -%}
+      {%- include functions/get_custom_excerpt.html params=post article=article has_image=false -%}
+    {%- endif -%}
+    {%- assign article_excerpt = return -%}
+    
+    <li class="post-item">
+      <h2 class="post-title">
+        <a class="post-link" href="{{ post_url }}">
+          {{ post.title | escape }}
+        </a>
+      </h2>
+      
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> {{ post.date | date: date_format }}</span>
+        {%- if post.author -%}
+        <span class="post-author left-vsplit"><i class="fa fa-pencil"></i> {{ post.author | escape }}</span>
+        {%- endif -%}
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> {{ reading_time }}</span>
+      </div>
+      
+      <div class="post-excerpt">
+        {%- if post_image -%}
+        <a class="post-image" href="{{ post_url }}">
+          <div class="post-image-container" style="background-image: url({{ post_image | relative_url }})"></div>
+        </a>
+        {%- endif -%}
+        
+        <a class="post-text" href="{{ post_url }}">
+          <div class="post-excerpt-text">{{ article_excerpt }}</div>
+          <span class="read_more">Read More</span>
+        </a>
+      </div>
+      
+      <div class="post-tags">
+        {%- for tag in post.tags -%}
+        <a class="post-tag" href="{{ '/tags.html' | relative_url }}#{{tag}}">#{{tag}}</a>
+        {%- endfor -%}
+      </div>
+    </li>
+    {%- endfor -%}
+  </ul>
+  
+  <!-- Pagination links -->
+  {%- if paginator.posts.size < site.posts.size -%}
+    {%- include views/paginator.html -%}
+  {%- endif -%}
+</div>
+{%- endif -%}
