@@ -54,7 +54,9 @@
       <div class="post-excerpt {{ layout_class }}">
         {%- if post_image -%}
         <a class="post-image" href="{{ post_url }}" title="{{ post.title | escape }}">
-          <div class="post-image-container" style="background-image: url({{ post_image | relative_url }})"></div>
+          <div class="post-image-container">
+            <img src="{{ post_image | relative_url }}" alt="{{ post.title | escape }}" class="post-image-img" loading="lazy">
+          </div>
         </a>
         {%- endif -%}
         
