@@ -338,11 +338,15 @@ html[data-theme="light"] {
 body {
   background-color: var(--kawaii-main-bg) !important;
   color: var(--kawaii-primary) !important; /* 设置默认正文颜色 */
+  position: relative; /* 建立堆叠上下文 */
+  z-index: 1; /* 设置较低的z-index，确保内容位于底层 */
 }
 
 /* 确保主要内容区域背景透明，以显示body背景 */
 .page-content {
   background-color: transparent !important;
+  position: relative; /* 建立堆叠上下文 */
+  z-index: 1; /* 较低的z-index值 */
 }
 
 /* 确保包装器也使用正确的背景色 */
@@ -363,6 +367,8 @@ body {
 /* 确保文章列表区域背景正确 */
 .articles, .post-list {
   background-color: transparent !important;
+  position: relative;
+  z-index: 1; /* 较低的z-index值 */
 }
 
 /* 强制覆盖可能的深色模式背景 */
@@ -883,6 +889,11 @@ img[src$=".svg"] {
 /* 确保主要内容区域不会被异常拉伸 */
 .page-content {
   flex: 1 0 auto; /* 让内容区域自动扩展，但不缩小 */
+}
+
+/* 确保返回顶部按钮显示在最上层，不被内容遮挡 */
+.click-to-top, #click-to-top {
+  z-index: 9999 !important; /* 确保返回顶部按钮始终位于最上层 */
 }
 
 /* -----------------------------------------------------------------------------
