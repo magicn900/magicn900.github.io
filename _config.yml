@@ -32,8 +32,6 @@ github_username:  magicn900
 theme: jekyll-theme-yat
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-paginate
 
 # YAT theme configuration
 yat:
