@@ -23,6 +23,16 @@
   transition: all 0.3s ease !important;
 }
 
+/* 确保翻译菜单和语言选择器始终在最上层 */
+.lang-select, 
+.lang-select-container,
+[data-lang],
+li a[data-lang],
+.site-nav ul li a img {
+  z-index: 10000 !important; /* 确保比loading层的z-index(9999)高 */
+  position: relative;
+}
+
 /* 页面加载动画 */
 .page-loading {
   position: fixed;
@@ -865,25 +875,6 @@ img[src$=".svg"] {
   }
 }
 
-/* 确保主题切换按钮在所有情况下都可以正常交互 */
-.theme-toggle {
-  position: relative;
-  z-index: 1000; /* 确保在所有内容之上，但低于loading动画 */
-  pointer-events: auto; /* 确保可以点击 */
-}
-
-/* 确保主题切换按钮在滚动时也能正常工作 */
-.site-header .theme-toggle {
-  position: relative;
-  z-index: 1001;
-}
-
-/* 修复可能的层级问题 */
-.site-header {
-  position: relative;
-  z-index: 1000;
-}
-
 /* 确保页脚不会被异常拉伸 */
 .site-footer {
   flex-shrink: 0; /* 防止页脚被压缩 */
@@ -892,5 +883,58 @@ img[src$=".svg"] {
 /* 确保主要内容区域不会被异常拉伸 */
 .page-content {
   flex: 1 0 auto; /* 让内容区域自动扩展，但不缩小 */
+}
+
+/* -----------------------------------------------------------------------------
+ * 语言选择器和翻译菜单修复
+ * -----------------------------------------------------------------------------
+ */
+
+/* 确保语言选择器正常显示 */
+a.lang-select,
+li a[class="lang-select"],
+span.lang-select {
+  display: inline-block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative;
+  z-index: 10000 !important;
+}
+
+/* 确保国旗图片正常显示 */
+.site-nav ul li img,
+a.lang-select img,
+li a[class="lang-select"] img {
+  display: inline-block !important;
+  max-width: 24px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 5px;
+  opacity: 1 !important;
+}
+
+/* 修复语言菜单的下拉显示 */
+ul li:hover > ul,
+ul li ul:hover {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+  z-index: 10001 !important; 
+}
+
+/* 修复下拉菜单位置和显示 */
+.site-nav ul li ul {
+  position: absolute !important;
+  background: var(--kawaii-header-footer-bg) !important;
+  min-width: 150px;
+  border: 1px solid var(--kawaii-bg-secondary);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* 确保当前语言和标志图标显示正确 */
+[data-lang="en"], [data-lang="fr"], [data-lang="zh"] {
+  display: inline-flex !important;
+  align-items: center;
+  z-index: 10000;
 }
 

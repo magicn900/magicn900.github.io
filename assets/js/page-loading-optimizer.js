@@ -56,8 +56,14 @@
       const loadingOverlay = document.getElementById('page-loading');
       if (loadingOverlay) {
         loadingOverlay.classList.add('loaded');
+        loadingOverlay.style.zIndex = "-1"; // 将z-index设为负值，确保不会遮挡其他元素
         setTimeout(() => {
           loadingOverlay.remove(); // 完全移除DOM元素
+          // 确保任何被添加的style也被清除
+          const loadingStyles = document.head.querySelector('style[data-for="page-loading"]');
+          if (loadingStyles) {
+            loadingStyles.remove();
+          }
         }, 500);
       }
     }, 300);
