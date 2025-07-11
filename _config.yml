@@ -29,11 +29,13 @@ twitter_username:
 github_username:  magicn900
 
 # Build settings
-theme: jekyll-theme-yat
+# theme: jekyll-theme-yat
+remote_theme: "jeffreytse/jekyll-theme-yat"
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
+  - jekyll-remote-theme
 
 # YAT theme configuration
 yat:
