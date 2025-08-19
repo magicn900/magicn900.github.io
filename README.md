@@ -2,7 +2,7 @@
 
 这是一个基于 [Jekyll](https://jekyllrb.com/) 和 [jekyll-theme-yat](https://github.com/jeffreytse/jekyll-theme-yat) 主题搭建的个人博客。项目经过定制化，实现了自动部署、分类页面模板化和自定义样式等功能。
 
-## ✨ 功能特性
+## 功能特性
 
 - **响应式主题**：基于 `jekyll-theme-yat`，在桌面和移动设备上都有良好的阅读体验。
 - **自定义页面**：添加了“分类”、“标签”、“归档”等独立页面，并优化了导航栏。
@@ -10,7 +10,7 @@
 - **自定义样式**：通过 `assets/css/my-kawaii-style.css` 文件实现了个性化的样式调整。
 - **自动化部署**：使用 GitHub Actions 实现了 CI/CD。当代码推送到 `main` 分支时，会自动构建 Jekyll 网站并部署到 `gh-pages` 分支，最终发布到 GitHub Pages。
 
-## 🚀 本地开发
+## 本地开发
 
 ### 环境要求
 
@@ -37,7 +37,7 @@
     ```
     启动后，在浏览器中访问 `http://127.0.0.1:4000` 即可预览博客。`--livereload` 参数会使你在修改文件后自动刷新页面。
 
-## ✍️ 如何撰写新文章
+## 如何撰写新文章
 
 1.  **创建文件**：在 `_posts` 目录下创建一个新的 Markdown 文件。
 2.  **命名规范**：文件名必须遵循 `YYYY-MM-DD-your-post-title.md` 的格式。例如：`2025-07-01-a-new-beginning.md`。
