@@ -372,11 +372,17 @@ html[data-theme] .site-header .site-nav .page-link.active {
 
 html[data-theme] .site-header .menu-icon > svg { fill: var(--color-header-text); }
 
+/* 横幅页沿用主题的顶部透明效果，滚动后恢复页眉底色。 */
 html[data-scroll-status="top"] header.site-header-transparent {
-  background-color: var(--color-header-bg);
+  background-color: transparent;
   border-bottom: none;
   margin-top: 0;
   box-shadow: none;
+}
+
+/* 首页草地横幅保留已确认的实色页眉。 */
+html[data-scroll-status="top"]:has(.page-banner .img-placeholder[src$="/assets/images/banner.jpg"]) header.site-header-transparent {
+  background-color: var(--color-header-bg);
 }
 
 html[data-scroll-status="top"] .site-header-transparent .site-brand .site-brand-inner,
