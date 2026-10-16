@@ -1,0 +1,435 @@
+/* -----------------------------------------------------------------------------
+ * 豆绿晨光 / 雾蓝夜色：经典白字投影
+ * 色彩按用途定义；两种模式共用组件规则，避免局部组件残留另一套配色。
+ * ----------------------------------------------------------------------------- */
+:root {
+  color-scheme: light;
+  --color-bg: #f3f6f4;
+  --color-surface: #ffffff;
+  --color-surface-alt: #e3ede7;
+  --color-header-bg: #6b9080;
+  --color-header-text: #ffffff;
+  --color-footer-bg: #f3f6f4;
+  --color-text: #3b4e46;
+  --color-heading: #273b33;
+  --color-muted: #5e7167;
+  --color-border: #d2dfd7;
+  --color-control-border: #7f998a;
+  --color-accent: #3f6c57;
+  --color-accent-hover: #2b503e;
+  --color-accent-soft: #e3ede7;
+  --color-on-accent: #ffffff;
+  --color-selection: #c7dccf;
+  --color-selection-text: #273b33;
+  --color-code-bg: #e7efea;
+  --color-code-comment: #5e7167;
+  --color-code-keyword: #795993;
+  --color-code-string: #39735a;
+  --color-code-number: #965a38;
+  --color-code-function: #3f6c57;
+  --color-shadow: rgb(27 50 39 / 12%);
+  --color-banner-text: #ffffff;
+  --color-banner-shade: rgb(15 29 44 / 55%);
+  --color-loader: #3f6c57;
+  --color-loader-label: #3f6c57;
+  --color-loader-photo: #ffffff;
+  --color-loader-label-photo: #ffffff;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --color-header-text: #dce5e2;
+  --color-loader: #d6dfd8;
+  --color-loader-label: #e7ede8;
+  --color-loader-photo: #d6dfd8;
+  --color-loader-label-photo: #e7ede8;
+  --color-bg: #1b242b;
+  --color-surface: #26323a;
+  --color-surface-alt: #293840;
+  --color-header-bg: #233139;
+  --color-footer-bg: #1b242b;
+  --color-text: #cbd5d7;
+  --color-heading: #e5ebe7;
+  --color-muted: #a0aeb4;
+  --color-border: #34424a;
+  --color-control-border: #7f929a;
+  --color-accent: #a9c0ca;
+  --color-accent-hover: #cfdddf;
+  --color-accent-soft: #293840;
+  --color-on-accent: #1b242b;
+  --color-selection: #3b515c;
+  --color-selection-text: #e5ebe7;
+  --color-code-bg: #172128;
+  --color-code-comment: #a0aeb4;
+  --color-code-keyword: #c8aedf;
+  --color-code-string: #a6c6aa;
+  --color-code-number: #d6b58d;
+  --color-code-function: #a9c0ca;
+  --color-shadow: rgb(0 0 0 / 22%);
+}
+
+html, body {
+  background-color: var(--color-bg) !important;
+  color: var(--color-text) !important;
+}
+
+.page-content, .wrapper, .main, section.main, .articles, .post-list {
+  background-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-heading);
+}
+
+a { color: var(--color-accent); }
+a:hover { color: var(--color-accent-hover); }
+
+a, button, input, select, textarea, label[for] {
+  -webkit-tap-highlight-color: var(--color-accent-soft);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+::selection {
+  background-color: var(--color-selection);
+  color: var(--color-selection-text);
+}
+
+/* 页眉保留豆绿；页脚和语言菜单使用对应主题的柔和表面色。 */
+html[data-theme] .site-header, html[data-theme] footer.site-footer {
+  color: var(--color-text);
+  box-shadow: none;
+}
+
+html[data-theme] .site-header { background-color: var(--color-header-bg); border-bottom: 1px solid var(--color-border); }
+html[data-theme] footer.site-footer { background-color: var(--color-footer-bg); border-top: 1px solid var(--color-border); }
+
+html[data-theme][data-scroll-status] footer.site-footer .site-footer-inner {
+  border-top: none !important;
+  color: var(--color-muted);
+}
+
+html[data-theme] .site-footer a { color: var(--color-accent); }
+html[data-theme] .site-footer a:hover { color: var(--color-accent-hover); }
+
+html[data-theme] .site-header .site-brand .site-brand-inner,
+html[data-theme] .site-header .site-brand .site-brand-inner:visited,
+html[data-theme] .site-header .site-nav .page-link {
+  color: var(--color-header-text);
+}
+
+html[data-theme] .site-header .site-nav .page-link:hover,
+html[data-theme] .site-header .site-nav .page-link.active {
+  color: var(--color-header-text);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+html[data-theme] .site-header .menu-icon > svg { fill: var(--color-header-text); }
+
+/* 横幅页沿用主题的顶部透明效果，滚动后恢复页眉底色。 */
+html[data-scroll-status="top"] header.site-header-transparent {
+  background-color: transparent;
+  border-bottom: none;
+  margin-top: 0;
+  box-shadow: none;
+}
+
+/* 首页草地横幅保留已确认的实色页眉。 */
+html[data-scroll-status="top"]:has(.page-banner .img-placeholder[src$="/assets/images/banner.jpg"]) header.site-header-transparent {
+  background-color: var(--color-header-bg);
+}
+
+html[data-scroll-status="top"] .site-header-transparent .site-brand .site-brand-inner,
+html[data-scroll-status="top"] .site-header-transparent .site-brand .site-brand-inner:visited,
+html[data-scroll-status="top"] .site-header-transparent .site-nav .page-link {
+  color: var(--color-banner-text);
+  text-shadow: none;
+}
+
+html[data-scroll-status="top"] .site-header-transparent .menu-icon > svg {
+  fill: var(--color-banner-text);
+}
+
+html[data-theme] .site-header .ct-language { background-color: rgb(0 0 0 / 12%); }
+html[data-theme] .site-header .ct-language::before { color: var(--color-header-text); }
+
+html[data-theme] .site-header .ct-language-dropdown {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 6px 20px var(--color-shadow);
+}
+
+html[data-theme] .site-header .ct-language-dropdown li {
+  border-bottom-color: var(--color-border);
+}
+
+html[data-theme] .site-header .ct-language-dropdown a {
+  color: var(--color-text);
+  text-shadow: none;
+}
+
+html[data-theme] .site-header .ct-language-selected,
+html[data-theme] .site-header .ct-language-dropdown li:hover,
+html[data-theme] .site-header .ct-language-dropdown li:focus-within {
+  background-color: var(--color-accent-soft) !important;
+}
+
+html[data-theme] .site-header .ct-language-dropdown a:hover { color: var(--color-accent-hover); }
+
+/* 键盘进入语言项时也显示菜单。 */
+.ct-language:focus-within .ct-language-dropdown {
+  margin-top: 8px;
+  max-height: 10000px;
+  visibility: visible;
+}
+
+@media (max-width: 800px) {
+  html[data-theme] .site-header .site-nav input:checked ~ .trigger {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 8px 24px var(--color-shadow);
+  }
+
+  html[data-theme] .site-header .site-nav .page-link,
+  html[data-theme] .site-header .site-nav .page-link:hover,
+  html[data-theme] .site-header .site-nav .page-link.active,
+  html[data-theme][data-scroll-status="top"] header.site-header-transparent.site-header .site-nav .page-link,
+  html[data-scroll-status="top"] .site-header-transparent .site-nav .page-link {
+    color: var(--color-heading);
+    text-shadow: none;
+  }
+}
+
+/* 文章标题用中性色；链接和选中状态才使用强调色。 */
+html[data-theme] .pagination .post-link,
+html[data-theme] .categories-archive .posts-list a,
+html[data-theme] .page-segments li a,
+html[data-theme] .post .post-related a,
+html[data-theme] .post .post-related > :first-child {
+  color: var(--color-heading);
+}
+
+html[data-theme] .pagination .post-link:hover,
+html[data-theme] .categories-archive .posts-list a:hover,
+html[data-theme] .page-segments li a:hover,
+html[data-theme] .post .post-related a:hover {
+  color: var(--color-accent-hover);
+}
+
+html[data-theme] .post-meta, html[data-theme] .pagination .post-meta,
+html[data-theme] .post .post-header .post-meta,
+html[data-theme] .page-archives .post-meta, html[data-theme] .page-segments .post-meta,
+html[data-theme] .post-date,
+figcaption {
+  color: var(--color-muted);
+}
+
+html[data-theme] .pagination .post-list > li:not(:last-child),
+html[data-theme] .post .post-header,
+html[data-theme] .common-list li {
+  border-bottom-color: var(--color-border);
+}
+
+html[data-theme] .categories-archive h2,
+html[data-theme] .categories-archive .posts-list li {
+  border-bottom-color: var(--color-border);
+}
+
+html[data-theme] .left-vsplit::before { background-color: var(--color-border); }
+
+html[data-theme] .post-tags .post-tag, .tag, .badge:not(pre) {
+  display: inline-block;
+  color: var(--color-accent);
+  background-color: var(--color-accent-soft);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 2px 7px;
+  text-decoration: none;
+}
+
+html[data-theme] .post-tags .post-tag:hover {
+  color: var(--color-accent-hover);
+  border-color: var(--color-accent);
+}
+
+html[data-theme] .pagination .post-title a::after,
+html[data-theme] .post .post-related ul a::after,
+html[data-theme] .page-segments li a::after {
+  color: var(--color-accent);
+  background-color: var(--color-accent-soft);
+}
+
+html[data-theme] .pagination .post-title a:visited::after,
+html[data-theme] .post .post-related ul a:visited::after,
+html[data-theme] .page-segments li a:visited::after {
+  color: var(--color-bg);
+  background-color: var(--color-bg);
+}
+
+/* 分类、数量徽章与文章目录。 */
+html[data-theme] .common-list li a { color: var(--color-text); }
+html[data-theme] .common-list li a:hover { background-color: var(--color-accent-soft); }
+
+html[data-theme] .common-list li span {
+  background-color: var(--color-surface-alt);
+  color: var(--color-muted);
+}
+
+html[data-theme] .post-menu .post-menu-title { color: var(--color-heading); }
+html[data-theme] .post-menu .post-menu-content ul { border-left-color: var(--color-border); }
+html[data-theme] .post-menu .post-menu-content ul a { color: var(--color-muted); }
+
+html[data-theme] .post-menu .post-menu-content ul .active,
+html[data-theme] .post-menu .post-menu-content ul .active:hover {
+  background-color: var(--color-accent-soft);
+  border-left-color: var(--color-accent);
+}
+
+html[data-theme] .post-menu .post-menu-content ul .active a,
+html[data-theme] .post-menu .post-menu-content ul a:hover {
+  color: var(--color-accent-hover) !important;
+}
+
+/* 引用、表格、分隔线与代码。覆盖 YAT 和 highlight.js 的默认配色。 */
+html[data-theme] blockquote {
+  color: var(--color-text);
+  background-color: var(--color-accent-soft);
+  border-left: 3px solid var(--color-accent);
+  padding: 12px 18px;
+}
+
+html[data-theme] hr, html[data-theme] .post .post-content hr {
+  height: 1px;
+  background-color: var(--color-border);
+  border: 0;
+  margin: 32px 0;
+}
+
+html[data-theme] table { color: var(--color-text); }
+html[data-theme] table th {
+  color: var(--color-heading);
+  background-color: var(--color-accent-soft);
+  border-color: var(--color-border);
+}
+html[data-theme] table td { border-color: var(--color-border); }
+html[data-theme] table tr:nth-child(even) { background-color: var(--color-surface); }
+
+html[data-theme] *:not(pre) > code, html[data-theme] kbd {
+  color: var(--color-accent-hover);
+  background-color: var(--color-accent-soft);
+}
+
+html[data-theme] pre, html[data-theme] pre.badge, html[data-theme] .highlight, html[data-theme] .hljs {
+  color: var(--color-text);
+  background-color: var(--color-code-bg);
+  border-radius: 6px;
+}
+
+html[data-theme] .highlight { border: 1px solid var(--color-border); }
+html[data-theme] pre > code { color: var(--color-text); }
+html[data-theme] pre.badge::before {
+  color: var(--color-muted);
+  background-color: var(--color-surface-alt);
+}
+
+html[data-theme] .highlight table, html[data-theme] .highlight td, html[data-theme] .highlight tr:nth-child(even) {
+  background-color: transparent;
+  border: 0;
+}
+
+html[data-theme] .hljs-comment, html[data-theme] .hljs-quote,
+html[data-theme] .highlight :is(.c, .c1, .cm, .cp, .cs, .lineno, .gl) {
+  color: var(--color-code-comment);
+}
+html[data-theme] .hljs-keyword, html[data-theme] .hljs-selector-tag, html[data-theme] .hljs-literal,
+html[data-theme] .highlight :is(.k, .kc, .kd, .kn, .kp, .kr, .kt, .ow) {
+  color: var(--color-code-keyword);
+}
+html[data-theme] .hljs-string, html[data-theme] .hljs-regexp, html[data-theme] .hljs-symbol,
+html[data-theme] .hljs-bullet, html[data-theme] .hljs-addition,
+html[data-theme] .highlight :is(.s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sr, .ss, .gi) {
+  color: var(--color-code-string);
+}
+html[data-theme] .hljs-number, html[data-theme] .hljs-variable, html[data-theme] .hljs-template-variable,
+html[data-theme] .hljs-attr, html[data-theme] .hljs-attribute, html[data-theme] .hljs-deletion,
+html[data-theme] .highlight :is(.m, .mf, .mh, .mi, .mo, .il, .na, .gd) {
+  color: var(--color-code-number);
+}
+html[data-theme] .hljs-title, html[data-theme] .hljs-built_in, html[data-theme] .hljs-type, html[data-theme] .hljs-section,
+html[data-theme] .hljs-name, html[data-theme] .hljs-meta, html[data-theme] .hljs-link,
+html[data-theme] .highlight :is(.nf, .nc, .nb, .nn, .nt, .ne) {
+  color: var(--color-code-function);
+}
+
+/* 分页、通用按钮、回到顶部。 */
+.btn, .btn-primary {
+  color: var(--color-on-accent);
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+.btn:hover, .btn-primary:hover {
+  color: var(--color-on-accent);
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+html[data-theme] .pagination .paginator .indicator,
+html[data-theme] .pagination .paginator .previous span,
+html[data-theme] .pagination .paginator .next span { color: var(--color-muted); }
+
+html[data-theme] .pagination .paginator > .previous::before,
+html[data-theme] .pagination .paginator > .next::after,
+html[data-theme] .post-nav .previous::before, html[data-theme] .post-nav .next::after {
+  border-color: var(--color-muted);
+}
+html[data-theme] .post-nav a { color: var(--color-accent); }
+html[data-theme] .post-nav a:hover { color: var(--color-accent-hover); }
+
+html[data-theme] .click-to-top {
+  color: var(--color-accent);
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-control-border);
+  box-shadow: 0 4px 16px var(--color-shadow);
+}
+html[data-theme] .click-to-top:hover {
+  color: var(--color-on-accent);
+  background-color: var(--color-accent);
+}
+
+/* 横幅上的文字固定使用图片上的亮色，不跟正文颜色互换。 */
+.page-banner { background-color: var(--color-surface-alt); }
+.page-banner .page-banner-inner { text-shadow: 0 2px 4px rgb(0 0 0 / 72%), 0 0 2px rgb(0 0 0 / 32%); }
+html[data-theme] .page-banner .page-banner-heading { font-weight: 400; }
+html[data-theme] .page-banner .page-banner-subheading { text-shadow: 0 1px 3px rgb(0 0 0 / 68%); }
+html[data-theme] .page-banner :is(h1, h2, .post-title, .post-subtitle, .post-meta),
+html[data-theme] .page-banner .post-tags .post-tag {
+  color: var(--color-banner-text);
+}
+html[data-theme] .page-banner .post-tags .post-tag {
+  background-color: var(--color-banner-shade);
+}
+
+/* 首页草地背景较亮，用细描边和分层投影保留白字的清晰轮廓。 */
+html[data-theme] .page-banner:has(.img-placeholder[src$="/assets/images/banner.jpg"]) :is(.page-banner-heading, .page-banner-subheading) {
+  -webkit-text-stroke: 1px rgb(12 24 20 / 85%);
+  paint-order: stroke fill;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 95%), 0 3px 6px rgb(0 0 0 / 85%), 0 5px 14px rgb(0 0 0 / 65%);
+}
+html[data-theme] .page-banner:has(.img-placeholder[src$="/assets/images/banner.jpg"]) .page-banner-subheading {
+  -webkit-text-stroke-width: .7px;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 95%), 0 2px 4px rgb(0 0 0 / 90%), 0 3px 9px rgb(0 0 0 / 70%);
+}
+
+html[data-theme] { scrollbar-color: var(--color-control-border) var(--color-bg); }
+::-webkit-scrollbar-thumb { background-color: var(--color-control-border); }
+::-webkit-scrollbar-thumb:hover { background-color: var(--color-muted); }
+
+.post-card, .card {
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+}

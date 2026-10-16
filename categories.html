@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://magicn900.github.io/">
+  <title>分类 · Frifan的赛博小窝</title>
+  <script>
+    (function () {
+      var destination = new URL("/", location.href);
+      var category = '';
+      try { category = decodeURIComponent(location.hash.slice(1)); } catch (_) {}
+      var categories = [
+        
+        { name: "创作", slug: "创作" },
+        
+        { name: "学习笔记", slug: "学习笔记" },
+        
+        { name: "时光手札", slug: "时光手札" }
+        
+      ];
+      var selected = categories.find(function (item) { return item.name === category || item.slug === category; });
+      if (selected) destination.searchParams.set('category', selected.name);
+      destination.hash = 'posts';
+      location.replace(destination.href);
+    })();
+  </script>
+  <style>
+    body { max-width: 36rem; margin: 12vh auto; padding: 0 24px; font: 16px/1.8 system-ui, sans-serif; color: #33483f; background: #f3f6f4; }
+    h1 { font-size: 24px; font-weight: 500; }
+    a { color: #4f7867; text-underline-offset: 4px; }
+    li { margin: 8px 0; }
+    @media (prefers-color-scheme: dark) { body { color: #cbd5d7; background: #1b242b; } a { color: #a9c0ca; } }
+  </style>
+</head>
+<body>
+  <h1>分类已移到首页</h1>
+  <p><a href="/#posts">前往首页查看文章</a></p>
+  <ul>
+    
+    <li><a href="/?category=%E5%88%9B%E4%BD%9C#posts">创作</a></li>
+    
+    <li><a href="/?category=%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#posts">学习笔记</a></li>
+    
+    <li><a href="/?category=%E6%97%B6%E5%85%89%E6%89%8B%E6%9C%AD#posts">时光手札</a></li>
+    
+  </ul>
+</body>
+</html>

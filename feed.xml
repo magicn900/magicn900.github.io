@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://magicn900.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://magicn900.github.io/" rel="alternate" type="text/html" /><updated>2026-10-16T13:04:19+00:00</updated><id>https://magicn900.github.io/feed.xml</id><title type="html">Frifan的赛博小窝</title><subtitle>欢迎来到我的个人博客，这里分享我的个人经历、学习笔记以及创作内容。 专注于小说创作、计算机相关学习和生活感悟。</subtitle><author><name>Frifan</name></author><entry><title type="html">(小说)设定</title><link href="https://magicn900.github.io/%E5%88%9B%E4%BD%9C/2026/10/15/(%E5%B0%8F%E8%AF%B4)%E8%AE%BE%E5%AE%9A.html" rel="alternate" type="text/html" title="(小说)设定" /><published>2026-10-15T15:00:00+00:00</published><updated>2026-10-15T15:00:00+00:00</updated><id>https://magicn900.github.io/%E5%88%9B%E4%BD%9C/2026/10/15/(%E5%B0%8F%E8%AF%B4)%E8%AE%BE%E5%AE%9A</id><content type="html" xml:base="https://magicn900.github.io/%E5%88%9B%E4%BD%9C/2026/10/15/(%E5%B0%8F%E8%AF%B4)%E8%AE%BE%E5%AE%9A.html"><![CDATA[<h2 id="小说名待定">（小说名待定）</h2>
+
+<h3 id="前言">前言</h3>
+
+<p>从大一那会开始构思的故事，中间断断续续地写了几万字，回看感觉毫无章法、凌乱不堪……</p>
+
+<p>遂打算重写一版，好好规划一下文章结构，重构一下世界观。</p>
+
+<p><del>目前只写了个第一章的开头，姑且先放在这里，后面的内容还在构思中。</del></p>
+
+<p>人总是无法共情过去的自己的，现在会看之前重写的这一章，发现又已经看不下去了，遂删除。这里暂时先放一些与Claude商量出来的设定吧，大概率也不是最终版。最近忙着找以后的饭碗，不知道什么时候才有空继续写下去了，大概是闲下来的时候吧哈哈哈哈。</p>
+
+<h2 id="1-世界观设定">1 世界观设定</h2>
+
+<h3 id="11-世界的叠加态与守护机制">1.1 世界的叠加态与守护机制</h3>
+
+<p><strong>核心概念</strong></p>
+<ul>
+  <li><strong>时间异常区域</strong>：每天24-30时，世界进入叠加态</li>
+  <li><strong>隐形冲突</strong>：普通人类无法感知这段异常时间的存在</li>
+  <li><strong>守护者角色</strong>：魔法少女作为世界的”观测者”，负责将叠加态的世界坍缩回正常状态</li>
+</ul>
+
+<p><strong>世界复位的必要性</strong></p>
+<ul>
+  <li>异常未处理将导致现实的稳定结构崩溃（形式不唯一，小到由情绪异常引起骚动，大到影响物理规则）</li>
+  <li>魔法少女的守护并非次次成功——失败的世界线已经消失</li>
+  <li>虽非所有异常都导致文明覆灭，但因事件数量庞大且时间跨度久远，整体覆灭概率显著（某退役魔法少女曾言：“人类文明延续至今，这本身就是一个奇迹。”）</li>
+</ul>
+
+<h3 id="12-魔法少女的本质与特性">1.2 魔法少女的本质与特性</h3>
+
+<p><strong>存在本质</strong></p>
+<ul>
+  <li><strong>内在化身</strong>：魔法少女源于人类内心潜意识的具现化</li>
+  <li><strong>二元人格</strong>：继承宿主全部记忆，但构成独立的人格存在（这涉及到一个哲学问题：只要记忆相同就是本人吗？）</li>
+  <li><strong>少女形态偏好</strong>：理论上任何人都可能成为魔法少女，但年轻女性觉醒率异常偏高，这就导致很多人都以为只有年轻女性有机会成为魔法少女</li>
+</ul>
+
+<p><strong>力量体系</strong></p>
+<ul>
+  <li><strong>愿望之力</strong>：力量核心源于 <strong>最初的愿望</strong> ——魔法少女存在的根本动机</li>
+  <li><strong>本征魔法</strong>：每位魔法少女拥有独特的 <strong>「本征魔法」</strong>，其形态与本质由 <strong>最初的愿望</strong> 决定</li>
+  <li><strong>魔法形态转换</strong>：常态魔法能力配合专属的本征魔法构成完整的战斗力体系</li>
+</ul>
+
+<p><strong>缺陷</strong></p>
+<ul>
+  <li>魔法少女形态下被消灭，将 <strong>永久</strong> 失去：最初的愿望、相关记忆、变身能力</li>
+  <li><strong>意志影响</strong>：魔法少女的思维与行动动机强烈受到 <strong>最初的愿望</strong> 支配</li>
+  <li><strong>冲突根源</strong>：不同 <strong>愿望</strong> 之间的矛盾与对立，成为魔法少女之间斗争的内在驱动力</li>
+</ul>
+
+<h3 id="13-有关使世界偏离的异常的设定">1.3 有关使世界偏离的异常的设定</h3>
+
+<h4 id="131-异常的本质情感具现化">1.3.1 异常的本质：情感具现化</h4>
+
+<p>当世界进入24-30时的叠加态时，人类积累的负面情感会从潜意识层面具现化为实体存在，这些以情感为食的扭曲存在统称为 <strong>魅影 (Phantoms)</strong></p>
+
+<p><strong>魅影的基本特性</strong></p>
+<ul>
+  <li><strong>生成机制</strong>：日常积累的强烈负面情绪在叠加态下凝结为实体怪物</li>
+  <li><strong>情感引力</strong>：天生被强烈情感吸引，魔法少女因其核心情感而成为首要目标</li>
+  <li><strong>现实扭曲</strong>：可以影响和改变周围现实的物理与逻辑规律</li>
+  <li><strong>进化能力</strong>：随着存在时间增长，魅影会获得更复杂的特性和能力</li>
+</ul>
+
+<h4 id="132-魅影的等级分类">1.3.2 魅影的等级分类</h4>
+
+<p><strong>基础层级</strong></p>
+<ul>
+  <li><strong>C级/零碎魅影</strong>：由个人极端情感形成的低威胁个体</li>
+  <li><strong>B级/聚合魅影</strong>：多人同类情感汇聚，具有清晰外形和攻击性</li>
+  <li><strong>A级/领域魅影</strong>：区域性集体情绪具现，能够展开”情感领域”影响大片区域</li>
+  <li><strong>S级/城市魅影</strong>：城市级别规模的情感创伤聚合体，威胁整座城市的存续</li>
+</ul>
+
+<h4 id="133-魅影的行为模式分类">1.3.3 魅影的行为模式分类</h4>
+
+<p><strong>战术行为分类</strong></p>
+<ul>
+  <li><strong>对峙型</strong>：直接攻击，正面冲突倾向强烈</li>
+  <li><strong>潜藏型</strong>：隐匿行踪，通过间接方式扩大影响</li>
+  <li><strong>同化型</strong>：改变周围环境使其符合自身情感特质</li>
+  <li><strong>寄生型</strong>：依附于其他实体或魅影进行传播扩散</li>
+  <li><strong>领域型（A级以上）</strong>：建立统治区域，可通过饿食情感迅速进化</li>
+</ul>
+
+<p><strong>领域展开（A级以上专属）</strong></p>
+<ul>
+  <li><strong>回忆领域</strong>：扭曲时间认知，重现过往场景或篡改集体记忆</li>
+  <li><strong>逻辑领域</strong>：改变局部物理规则，创造违背常识的空间结构</li>
+  <li><strong>梦境领域</strong>：将现实与梦境混同，让受害者陷入无穷幻觉</li>
+  <li><strong>情感共鸣</strong>：放大区域内特定情感，制造连锁反应</li>
+</ul>
+
+<h4 id="134-魅影的分布">1.3.4 魅影的分布</h4>
+
+<p><strong>高生成区域</strong></p>
+<ul>
+  <li><strong>情感密集区</strong>：学校、医院、商业中心等情绪波动频繁场所</li>
+  <li><strong>历史创伤点</strong>：发生过重大悲剧的场所有基础的”情感沉淀”</li>
+  <li><strong>社会矛盾点</strong>：长期存在结构性矛盾的地区容易产生高等级魅影</li>
+  <li><strong>现实薄弱带</strong>：之前坍缩失败的空室裂口区域魅影生成率翻倍</li>
+</ul>
+
+<h4 id="135-魅影的生命周期与连锁效应">1.3.5 魅影的生命周期与连锁效应</h4>
+
+<p><strong>生命周期阶段</strong></p>
+<ol>
+  <li><strong>萌芽期（24时）</strong>：情感凝结成魅影雏形，形态模糊</li>
+  <li><strong>发展期（25-27时）</strong>：定型并获得基础能力，开始影响现实</li>
+  <li><strong>成熟期（28-29时）</strong>：固化为稳定威胁，可能展开领域</li>
+  <li><strong>扩散期（30时）</strong>：如果没有被清除，将彻底改变局部现实</li>
+</ol>
+
+<p><strong>连锁反应机制</strong></p>
+<ul>
+  <li>单一魅影未及时处理会产生”情感污染”，加速新魅影生成</li>
+  <li>多个魅影聚集会产生协同效应，提升整体威胁等级</li>
+  <li>长期存在的大魅影会永久改变区域的情感环境，形成”情感涡流”</li>
+  <li>如果区域魅影密度过高，可能导致整个叠加态失控，无法回归正常</li>
+</ul>
+
+<h3 id="14-魔法少女与魅影">1.4 魔法少女与魅影</h3>
+
+<p>魔法少女与魅影其实是人类意念集合体的一体两面。魔法少女的存在，实际上代表着维持人类精神不崩溃的正面情绪。同时，一如大众所知，物极必反，正负情绪需要维持平衡，倘若魔法少女的力量完全没有魅影进行制衡，也有可能导致意料之外的后果。</p>]]></content><author><name>Frifan</name></author><category term="创作" /><category term="小说" /><summary type="html"><![CDATA[（小说名待定）]]></summary></entry><entry><title type="html">归家前夜不眠所思</title><link href="https://magicn900.github.io/%E6%97%B6%E5%85%89%E6%89%8B%E6%9C%AD/2025/07/07/%E5%BD%92%E5%AE%B6%E5%89%8D%E5%A4%9C%E4%B8%8D%E7%9C%A0%E6%89%80%E6%80%9D.html" rel="alternate" type="text/html" title="归家前夜不眠所思" /><published>2025-07-07T17:00:00+00:00</published><updated>2025-07-07T17:00:00+00:00</updated><id>https://magicn900.github.io/%E6%97%B6%E5%85%89%E6%89%8B%E6%9C%AD/2025/07/07/%E5%BD%92%E5%AE%B6%E5%89%8D%E5%A4%9C%E4%B8%8D%E7%9C%A0%E6%89%80%E6%80%9D</id><content type="html" xml:base="https://magicn900.github.io/%E6%97%B6%E5%85%89%E6%89%8B%E6%9C%AD/2025/07/07/%E5%BD%92%E5%AE%B6%E5%89%8D%E5%A4%9C%E4%B8%8D%E7%9C%A0%E6%89%80%E6%80%9D.html"><![CDATA[<p><img src="/assets/images/post/Jul-8-2025.png" alt="banner" /></p>
+
+<h3 id="床榻上的煎熬">床榻上的煎熬</h3>
+
+<p>明早就要动身归家了，大概是最近一段时间的频繁熬夜扰乱了生物钟，我躺在床上翻来覆去怎么也睡不着。一些零星的片段不断在我的脑海中闪现，索性起身来把它们记录下来。</p>
+
+<hr />
+
+<h3 id="关于文字内涵的讨论">关于文字内涵的讨论</h3>
+
+<p>想起了之前友人让我品鉴鲁迅先生知名的文字。</p>
+
+<p>对于鲁迅先生“我家门前两棵树，一棵是枣树，另一棵也是枣树”这样的文字，友人给出的评价是：鲁迅自己可能也不知道他想表达什么。</p>
+
+<p>我但认为这种说法可能有失偏颇，这段文字并不是没有确切含义，用统计学的说法来解释的话，我们可以说这句话表达了一个方差比较大的 <strong>分布</strong><sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>，我认为这个说法比 <strong>氛围</strong> 这个词更加形象。</p>
+
+<p>文字本身就是设计用来承载信息的，它总是能传达些什么，尽管有时候我们可能无法单纯用语言准确地表达出来。</p>
+
+<h3 id="功利化的好奇心">功利化的好奇心</h3>
+
+<p>大概在高中那会的某个假期，我爹在某个我已经忘记的情境下对我说：“好奇心可是很重要的。”</p>
+
+<p>大概从那时起，我开始尝试走出麻木不仁、对世界漠不关心的状态，重新拾起了我那被遗弃在角落里的好奇心。</p>
+
+<p>但是此刻回忆起我这段时间以来培养的“好奇心”，我发觉自己似乎只会对某些于我而言没有解透的专业知识产生探索欲望，而那些似乎“没有意义”的事物我就完全不会在意。这让我有些困扰：真正的好奇心应该如此功利吗？</p>
+
+<p>我会怀疑这些所谓的好奇心不过是我自己捏造出来的，可是我又的的确确能够在这种好奇心得到满足时感到快乐。</p>
+
+<p>难道说……我是先天学习圣体？😲</p>
+
+<p>也可能所有的观察结果都是我的错觉，这种自我认知的探索和发掘还有待更进一步……</p>
+
+<hr />
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>这里的“分布”借用了统计学中的概念。可以把它想象成读者对这句话可能产生的所有不同解读的集合。说它的“方差”比较大，意思是大家的解读非常发散、五花八门，并没有一个公认的标准答案。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>Frifan</name></author><category term="时光手札" /><category term="随笔" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">是什么导致了拖延</title><link href="https://magicn900.github.io/%E6%97%B6%E5%85%89%E6%89%8B%E6%9C%AD/2025/07/04/%E6%98%AF%E4%BB%80%E4%B9%88%E5%AF%BC%E8%87%B4%E4%BA%86%E6%8B%96%E5%BB%B6.html" rel="alternate" type="text/html" title="是什么导致了拖延" /><published>2025-07-04T13:00:00+00:00</published><updated>2025-07-04T13:00:00+00:00</updated><id>https://magicn900.github.io/%E6%97%B6%E5%85%89%E6%89%8B%E6%9C%AD/2025/07/04/%E6%98%AF%E4%BB%80%E4%B9%88%E5%AF%BC%E8%87%B4%E4%BA%86%E6%8B%96%E5%BB%B6</id><content type="html" xml:base="https://magicn900.github.io/%E6%97%B6%E5%85%89%E6%89%8B%E6%9C%AD/2025/07/04/%E6%98%AF%E4%BB%80%E4%B9%88%E5%AF%BC%E8%87%B4%E4%BA%86%E6%8B%96%E5%BB%B6.html"><![CDATA[<h4 id="起因">起因</h4>
+
+<p>最近正在忙于升学的事情，需要和很多不同的人打交道，有熟人，也有认识但不熟悉的。作为一个内向的人，每次向未知结果的社交事件发起的冲锋都需要耗费很大的勇气。而在纠结于怎么张口的过程中，我就陷入了无止境的拖延……</p>
+
+<p>所以稍微记录一下所思所想，其实也是为了敦促我自己尽快行动起来吧😃</p>
+
+<h4 id="gemini-老师的回答">Gemini 老师的回答</h4>
+
+<p>感觉 Gemini 老师的回答比较具有启发性，这里摘录一下：</p>
+
+<blockquote>
+  <p>这种情况其实非常普遍，很多人在面对不确定性时都会感到压力，从而不自觉地选择拖延。这并不是您的个例，而是一种常见的心理反应。</p>
+
+  <p>这背后通常是因为我们的大脑天生喜欢确定性和即-时奖励。“未知的结果”带来了不确定性，可能会被大脑解读为一种潜在的威胁或失败的风险。为了避免这种不舒服的感觉，大脑会倾向于去做那些能立即带来满足感、结果更明确的事情（比如看视频、玩游戏），而把那件“棘手”的事情往后推。</p>
+
+  <p>这在心理学上通常与以下几点有关：</p>
+
+  <ul>
+    <li><strong>对失败的恐惧</strong>：如果结果是未知的，那么其中一种可能性就是“失败”。为了避免体验到失败的挫败感，我们干脆就不开始。</li>
+    <li><strong>完美主义</strong>：希望一次就能做到最好，但“未知”意味着可能无法达到完美。这种压力会让人动弹不得。</li>
+    <li><strong>决策疲劳</strong>：未知的结果通常意味着需要做更多的决定和应对各种变量，这会消耗大量的精力，让人望而却步。</li>
+  </ul>
+
+  <p>如果您想尝试改变这种模式，可以试试以下几个小方法：</p>
+
+  <ol>
+    <li><strong>拆解任务，聚焦于“下一步”</strong>：把那个“结果未知”的大任务，拆解成一个个具体、微小且结果可控的步骤。你不需要马上看&gt;到最终结果，你只需要知道，接下来的10分钟你要做什么。比如，“写一份报告”可以拆解成“打开文档，写下标题和第一段话”。</li>
+    <li><strong>关注过程，而非结果</strong>：给自己设定一个基于“过程”的目标，而不是“结果”的目标。例如，不说“我今天要写完报告”，而是说“我今天要花25分钟的时间来写报告”（番茄工作法）。无论25分钟后写得好坏，你都完成了目标，这会给你带来成就感。</li>
+    <li><strong>设定“足够好”的标准</strong>：放弃“必须完美”的想法，接受“完成比完美更重要”。告诉自己，先做出一个60分的“草稿”，以后总有机会修改到80分、90分。</li>
+    <li><strong>“五分钟启动”法则</strong>：承诺自己只为这件事工作五分钟。通常，最难的就是“开始”这个动作。一旦你投入了五分钟，就很有可能会发现事情没那么可怕，然后自然而然地继续下去。</li>
+    <li><strong>预演最坏的结果</strong>：认真想一下，如果这件事真的失败了，最坏的结果是什么？通常你会发现，所谓的“最坏结果”并没有想象中那么难以承受。当恐惧被具象化后，它对你的控制力就会减弱。</li>
+  </ol>
+</blockquote>
+
+<p>总结来说，Gemini 老师的建议就是不要管结果如何，先去做。这的确是一个很好的方法，很多时候动起手来就没功夫想那么多了……</p>
+
+<p>不过这也引出了另一个问题：<strong>我们应该“埋头干活不看路”吗？</strong>我想这大概也是造成我拖延的一大要素，害怕自己做出的决定是错误的，或者说做出的努力是徒劳的。而仔细地思考策略又会耗费我很多的精力。</p>
+
+<hr />
+
+<p>好吧，写着写着就去把那些拖延的事情都做完了，剩下的文章就下次拖延时再写吧😀</p>]]></content><author><name>Frifan</name></author><category term="时光手札" /><category term="生活感悟" /><category term="随笔" /><summary type="html"><![CDATA[起因]]></summary></entry><entry><title type="html">创作介绍及模板</title><link href="https://magicn900.github.io/%E5%88%9B%E4%BD%9C/2025/06/30/%E5%88%9B%E4%BD%9C%E4%BB%8B%E7%BB%8D%E5%8F%8A%E6%A8%A1%E6%9D%BF.html" rel="alternate" type="text/html" title="创作介绍及模板" /><published>2025-06-30T13:00:00+00:00</published><updated>2025-06-30T13:00:00+00:00</updated><id>https://magicn900.github.io/%E5%88%9B%E4%BD%9C/2025/06/30/%E5%88%9B%E4%BD%9C%E4%BB%8B%E7%BB%8D%E5%8F%8A%E6%A8%A1%E6%9D%BF</id><content type="html" xml:base="https://magicn900.github.io/%E5%88%9B%E4%BD%9C/2025/06/30/%E5%88%9B%E4%BD%9C%E4%BB%8B%E7%BB%8D%E5%8F%8A%E6%A8%A1%E6%9D%BF.html"><![CDATA[<h2 id="创作">创作</h2>
+
+<p><strong>———这个板块会分享一些个人原创的小说、诗歌等。</strong></p>
+
+<p><a href="/?category=%E5%88%9B%E4%BD%9C#posts"><i class="fa fa-folder-open"></i> 查看所有“创作”…</a></p>
+
+<hr />
+
+<h2 id="作品名称h2">作品名称（H2）</h2>
+
+<p><em>（该部分为模板内容，仅用于占位）</em></p>
+
+<h3 id="故事梗概">故事梗概</h3>
+
+<p>用几句话概括您想要讲述的故事的核心内容。</p>
+
+<blockquote>
+  <p>一个关于追寻与失去、在星辰大海中寻找归宿的幻想故事。</p>
+</blockquote>
+
+<h3 id="角色设定">角色设定</h3>
+
+<ul>
+  <li><strong>主角：</strong> [姓名]，[身份]，[性格特点]</li>
+  <li><strong>配角：</strong> [姓名]，[与主角的关系]，[在故事中的作用]</li>
+</ul>
+
+<h3 id="章节或片段">章节或片段</h3>
+
+<h4 id="第一章破晓">第一章：破晓</h4>
+
+<p>在这里开始您的正文创作。可以自由发挥，不受格式限制。</p>
+
+<p><em>（此处省略正文…）</em></p>
+
+<h3 id="灵感来源">灵感来源</h3>
+
+<p>记录下启发您创作的音乐、画面或一句话，以备不时之需。</p>
+
+<ul>
+  <li><strong>音乐：</strong> [歌曲名] - [艺术家]</li>
+  <li><strong>画面：</strong> 一张描绘黄昏海边的油画。</li>
+</ul>]]></content><author><name>Frifan</name></author><category term="创作" /><category term="模板" /><summary type="html"><![CDATA[创作]]></summary></entry><entry><title type="html">学习笔记介绍及模板</title><link href="https://magicn900.github.io/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2025/06/30/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BB%8B%E7%BB%8D%E5%8F%8A%E6%A8%A1%E6%9D%BF.html" rel="alternate" type="text/html" title="学习笔记介绍及模板" /><published>2025-06-30T13:00:00+00:00</published><updated>2025-06-30T13:00:00+00:00</updated><id>https://magicn900.github.io/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2025/06/30/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BB%8B%E7%BB%8D%E5%8F%8A%E6%A8%A1%E6%9D%BF</id><content type="html" xml:base="https://magicn900.github.io/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/2025/06/30/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BB%8B%E7%BB%8D%E5%8F%8A%E6%A8%A1%E6%9D%BF.html"><![CDATA[<h2 id="学习笔记">学习笔记</h2>
+
+<p><strong>———这个板块会分享一些个人学习心得和技术笔记。</strong></p>
+
+<p><a href="/?category=%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#posts"><i class="fa fa-folder-open"></i> 查看所有“学习笔记”…</a></p>
+
+<hr />
+
+<h2 id="笔记名称h2">笔记名称（H2）</h2>
+
+<p><em>（该部分为模板内容，仅用于占位）</em></p>
+
+<h3 id="核心概念-h3">核心概念 (H3)</h3>
+
+<p>在这里简要介绍您正在学习的核心概念或技术点。</p>
+
+<h4 id="关键知识点-h4">关键知识点 (H4)</h4>
+
+<ul>
+  <li><strong>知识点一：</strong> 使用无序列表来罗列关键定义或特性。</li>
+  <li><strong>知识点二：</strong> 列表可以帮助您更好地组织思路。</li>
+  <li><strong>知识点三：</strong> 善用 <code class="language-plaintext highlighter-rouge">&lt;strong&gt;</code> 标签或 Markdown 的 <code class="language-plaintext highlighter-rouge">**</code> 来强调重点。</li>
+  <li><strong>知识点四：</strong> 可以使用角标来标注重要信息，例如<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>。</li>
+</ul>
+
+<h3 id="操作步骤或代码示例">操作步骤或代码示例</h3>
+
+<p>如果需要记录操作步骤，可以使用有序列表：</p>
+
+<ol>
+  <li>第一步：准备环境。</li>
+  <li>第二步：执行命令。</li>
+  <li>第三步：观察结果。</li>
+</ol>
+
+<p>对于代码，使用代码块并指定语言类型，例如 <code class="language-plaintext highlighter-rouge">javascript</code>：</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">helloWorld</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello, world!</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>当您想引用一段重要的说明或名言时，可以使用块引用：</p>
+
+<blockquote>
+  <p>Stay hungry, stay foolish. —— Steve Jobs</p>
+</blockquote>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>这是一个角标示例，您可以在文中引用它来提供额外信息。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name>Frifan</name></author><category term="学习笔记" /><category term="模板" /><summary type="html"><![CDATA[学习笔记]]></summary></entry><entry><title type="html">时光手札介绍及模板</title><link href="https://magicn900.github.io/%E6%97%B6%E5%85%89%E6%89%8B%E6%9C%AD/2025/06/30/%E6%97%B6%E5%85%89%E6%89%8B%E6%9C%AD%E4%BB%8B%E7%BB%8D%E5%8F%8A%E6%A8%A1%E6%9D%BF.html" rel="alternate" type="text/html" title="时光手札介绍及模板" /><published>2025-06-30T13:00:00+00:00</published><updated>2025-06-30T13:00:00+00:00</updated><id>https://magicn900.github.io/%E6%97%B6%E5%85%89%E6%89%8B%E6%9C%AD/2025/06/30/%E6%97%B6%E5%85%89%E6%89%8B%E6%9C%AD%E4%BB%8B%E7%BB%8D%E5%8F%8A%E6%A8%A1%E6%9D%BF</id><content type="html" xml:base="https://magicn900.github.io/%E6%97%B6%E5%85%89%E6%89%8B%E6%9C%AD/2025/06/30/%E6%97%B6%E5%85%89%E6%89%8B%E6%9C%AD%E4%BB%8B%E7%BB%8D%E5%8F%8A%E6%A8%A1%E6%9D%BF.html"><![CDATA[<h2 id="时光手札">时光手札</h2>
+
+<p><strong>———这个板块会分享一些个人生活感悟和时光记录。</strong></p>
+
+<p><a href="/?category=%E6%97%B6%E5%85%89%E6%89%8B%E6%9C%AD#posts"><i class="fa fa-folder-open"></i> 查看所有“时光手札”…</a></p>
+
+<hr />
+
+<h2 id="手札名称h2">手札名称（H2）</h2>
+
+<p><em>（该部分为模板内容，仅用于占位）</em></p>
+
+<h3 id="今日心情">今日心情</h3>
+
+<p>在这里，您可以用一两句话，或是一段文字，描绘今天的心情。比如：</p>
+
+<blockquote>
+  <p>阳光正好，微风不燥，是适合放空和思考的一天。</p>
+</blockquote>
+
+<h3 id="值得记录的事">值得记录的事</h3>
+
+<ul>
+  <li><strong>一件小确幸：</strong> 比如，在街角遇到一只可爱的猫咪，或者喝到了一杯特别好喝的奶茶。</li>
+  <li><strong>一个新感悟：</strong> 可能是从一本书、一部电影，或是一次谈话中得到的启发。</li>
+  <li><strong>一个未来的期许：</strong> 对明天、下周，或是更遥远的未来，许下一个小小的愿望。</li>
+</ul>
+
+<h3 id="照片回忆">照片回忆</h3>
+
+<p>如果今天拍了有意义的照片，可以在这里插入它。一张图片胜过千言万语。</p>
+
+<p><img src="请在这里替换为图片链接" alt="请在这里替换图片描述" /></p>
+
+<p><em>图片下的文字可以用来补充说明。</em></p>]]></content><author><name>Frifan</name></author><category term="时光手札" /><category term="模板" /><summary type="html"><![CDATA[时光手札]]></summary></entry></feed>
