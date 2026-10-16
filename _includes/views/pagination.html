@@ -3,81 +3,39 @@
 {%- elsif paginator == nil -%}
   {%- assign paginator = site -%}
 {%- endif -%}
-
 {%- if paginator.posts.size > 0 -%}
-<div class="pagination">
-  <!-- Post list links -->
+<div class="pagination reading-list" id="posts">
+  <div class="reading-list-heading"><h2>最近更新</h2><span class="post-count" aria-live="polite">{{ paginator.posts.size }} 篇记录</span></div>
+  <div class="post-filters" role="group" aria-label="按分类筛选文章" hidden>
+    <button type="button" data-category="" aria-pressed="true">全部 <span>{{ paginator.posts.size }}</span></button>
+    {%- assign categories = paginator.posts | map: 'categories' | join: ',' | split: ',' | uniq | sort -%}
+    {%- for category in categories -%}
+      {%- assign category_posts = paginator.posts | where_exp: 'item', 'item.categories contains category' -%}
+      <button type="button" data-category="{{ category | escape }}" aria-pressed="false">{{ category | escape }} <span>{{ category_posts.size }}</span></button>
+    {%- endfor -%}
+  </div>
   <ul class="post-list">
     {%- for post in paginator.posts -%}
-    {%- assign date_format = site.yat.date_format | default: "%b %-d, %Y" -%}
-    {%- assign article = post.content -%}
-    {%- assign lang = post.lang -%}
-    {%- include functions.html func='get_reading_time' -%}
-    {%- assign reading_time = return -%}
-    {%- assign post_url = post.url | relative_url -%}
-
-    {%- comment -%}配置文章封面图片{%- endcomment -%}
-    {%- assign post_image = post.excerpt_image | default: post.banner.image | default: post.banner -%}
-    
-    {%- comment -%}使用自定义摘要函数，根据是否有图片调整长度{%- endcomment -%}
-    {%- if post_image -%}
-      {%- include functions/get_custom_excerpt.html params=post article=article has_image=true -%}
-    {%- else -%}
-      {%- include functions/get_custom_excerpt.html params=post article=article has_image=false -%}
-    {%- endif -%}
-    {%- assign article_excerpt = return -%}
-    
-    {%- comment -%}计算布局方向：奇数索引图片在左，偶数索引图片在右{%- endcomment -%}
-    {%- assign post_index = forloop.index -%}
-    {%- assign remainder = post_index | modulo: 2 -%}
-    {%- if remainder == 1 -%}
-      {%- assign layout_class = "image-left" -%}
-    {%- else -%}
-      {%- assign layout_class = "image-right" -%}
-    {%- endif -%}
-    
-    <li class="post-item">
-      <h2 class="post-title">
-        <a class="post-link" href="{{ post_url }}">
-          {{ post.title | escape }}
-        </a>
-      </h2>
-      
-      <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> {{ post.date | date: date_format }}</span>
-        {%- if post.author -%}
-        <span class="post-author left-vsplit"><i class="fa fa-pencil"></i> {{ post.author | escape }}</span>
-        {%- endif -%}
-        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> {{ reading_time }}</span>
+      {%- assign post_url = post.url | relative_url -%}
+      {%- assign post_image = post.excerpt_image | default: post.banner.image | default: post.banner -%}
+      {%- if post_image.video -%}{%- assign post_image = nil -%}{%- endif -%}
+    <li class="post-item{% if post_image %} has-image{% endif %}" data-categories="{{ post.categories | jsonify | escape }}">
+      <div class="post-summary">
+        <div class="post-meta"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y.%m.%d' }}</time>{% for category in post.categories %} · {{ category | escape }}{% endfor %}</div>
+        <h2 class="post-title"><a class="post-link" href="{{ post_url }}">{{ post.title | escape }}</a></h2>
+        <p class="post-excerpt-text">{{ post.content | strip_html | normalize_whitespace | truncate: 200 }}</p>
+        <div class="post-bottom">
+          <div class="post-tags">{%- for tag in post.tags -%}<a class="post-tag" href="{{ '/tags/' | relative_url }}#{{ tag | uri_escape }}">#{{ tag | escape }}</a>{%- endfor -%}</div>
+          <a class="read_more" href="{{ post_url }}" aria-label="阅读：{{ post.title | escape }}">阅读 <span aria-hidden="true">→</span></a>
+        </div>
       </div>
-      
-      <div class="post-excerpt {{ layout_class }}">
-        {%- if post_image -%}
-        <a class="post-image" href="{{ post_url }}" title="{{ post.title | escape }}">
-          <div class="post-image-container">
-            <img src="{{ post_image | relative_url }}" alt="{{ post.title | escape }}" class="post-image-img" loading="lazy">
-          </div>
-        </a>
-        {%- endif -%}
-        
-        <a class="post-text" href="{{ post_url }}">
-          <div class="post-excerpt-text">{{ article_excerpt }}</div>
-          <span class="read_more">Read More</span>
-        </a>
-      </div>
-      
-      <div class="post-tags">
-        {%- for tag in post.tags -%}
-        <a class="post-tag" href="{{ '/tags.html' | relative_url }}#{{tag}}">#{{tag}}</a>
-        {%- endfor -%}
-      </div>
+      {%- if post_image -%}
+      <a class="post-image" href="{{ post_url }}" tabindex="-1" aria-hidden="true"><img src="{{ post_image | relative_url }}" alt="" width="156" height="112" loading="lazy" decoding="async"></a>
+      {%- endif -%}
     </li>
     {%- endfor -%}
   </ul>
-  
-  <!-- Pagination links -->
-  {%- if paginator.posts.size < site.posts.size -%}
-    {%- include views/paginator.html -%}
-  {%- endif -%}
+  {%- if paginator.posts.size < site.posts.size -%}{%- include views/paginator.html -%}{%- endif -%}
+  <div class="all-posts-link"><a href="{{ '/archives/' | relative_url }}">查看全部 {{ site.posts.size }} 篇记录 <span aria-hidden="true">→</span></a></div>
 </div>
 {%- endif -%}

@@ -1,0 +1,11 @@
+<div class="translation-control" data-page-language="{{ lang | default: 'zh-CN' | escape }}">
+  <label class="visually-hidden" for="site-language">翻译语言</label>
+  <select id="site-language" aria-label="翻译语言">
+    <option value="">语言</option>
+    {% for item in translate_langs %}
+    <option value="{{ item.lang | escape }}">{{ item.text | escape }}</option>
+    {% endfor %}
+  </select>
+  <div id="google_translate_element" hidden></div>
+  <span class="translation-status visually-hidden" role="status"></span>
+</div>

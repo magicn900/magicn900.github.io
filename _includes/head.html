@@ -7,7 +7,7 @@
   {%- assign name = 'night_mode' -%}
   {%- include functions.html func='get_value' default='auto' -%}
   {%- assign initial_night_mode = return -%}
-  <!-- 与主题开关使用同一配置；在样式和加载遮罩出现前恢复主题。 -->
+  <!-- 与主题开关使用同一配置；在首屏绘制前恢复主题。 -->
   <script>
     (function() {
       var nightModeOption = String({{ initial_night_mode | jsonify }}).toLowerCase();
@@ -25,7 +25,7 @@
       if (nightModeOption === 'auto') {
         var now = new Date();
         var hours = now.getHours();
-        nightShift = hours >= 19 || hours <= 7;
+        nightShift = hours >= 19 || hours < 7;
         var toggleAt = new Date(now);
         if (nightShift && hours > 7) toggleAt.setDate(toggleAt.getDate() + 1);
         toggleAt.setHours(nightShift ? 7 : 19, 0, 0, 0);
@@ -41,18 +41,19 @@
     })();
   </script>
   <link rel="icon" href="{{ site.favicon }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
-  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/my-kawaii-style.css' | relative_url }}">
-  <!-- 配色准备好后再显示加载动画。 -->
-  <script src="{{ '/assets/js/page-loading-optimizer.js' | relative_url }}"></script>
-  <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media="print" onload="this.media='all'" data-site-optional>
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></noscript>
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" data-site-style>
+  <link rel="stylesheet" href="{{ '/assets/css/my-kawaii-style.css' | relative_url }}" data-site-style>
+  <link rel="stylesheet" href="{{ '/assets/css/reading-layout.css' | relative_url }}" data-site-style>
+  <!-- 本地脚本延后执行；首屏正文不等待第三方资源。 -->
+  <script src="{{ '/assets/js/page-loading-optimizer.js' | relative_url }}" defer data-site-runtime></script>
+  <script src="{{ '/assets/js/site-interactions.js' | relative_url }}" defer data-site-runtime></script>
+  <script src="{{ '/assets/js/page-enhancements.js' | relative_url }}" defer data-site-runtime></script>
+  <script src="{{ '/assets/js/site-navigation.js' | relative_url }}" defer data-site-runtime></script>
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
   {%- include extensions/google-analytics.html -%}
   {%- endif -%}
-  {%- include extensions/code-highlight.html -%}
-  {%- include extensions/photo-swipe.html -%}
   {%- include custom-head.html -%}
 </head>

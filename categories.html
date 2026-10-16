@@ -1,0 +1,48 @@
+---
+layout: null
+title: 分类
+permalink: /categories.html
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="{{ '/' | absolute_url }}">
+  <title>分类 · {{ site.title | escape }}</title>
+  <script>
+    (function () {
+      var destination = new URL({{ '/' | relative_url | jsonify }}, location.href);
+      var category = '';
+      try { category = decodeURIComponent(location.hash.slice(1)); } catch (_) {}
+      var categories = [
+        {% for category in site.categories %}
+        { name: {{ category[0] | jsonify }}, slug: {{ category[0] | slugify | jsonify }} }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ];
+      var selected = categories.find(function (item) { return item.name === category || item.slug === category; });
+      if (selected) destination.searchParams.set('category', selected.name);
+      destination.hash = 'posts';
+      location.replace(destination.href);
+    })();
+  </script>
+  <style>
+    body { max-width: 36rem; margin: 12vh auto; padding: 0 24px; font: 16px/1.8 system-ui, sans-serif; color: #33483f; background: #f3f6f4; }
+    h1 { font-size: 24px; font-weight: 500; }
+    a { color: #4f7867; text-underline-offset: 4px; }
+    li { margin: 8px 0; }
+    @media (prefers-color-scheme: dark) { body { color: #cbd5d7; background: #1b242b; } a { color: #a9c0ca; } }
+  </style>
+</head>
+<body>
+  <h1>分类已移到首页</h1>
+  <p><a href="{{ '/' | relative_url }}#posts">前往首页查看文章</a></p>
+  <ul>
+    {% for category in site.categories %}
+    <li><a href="{{ '/' | relative_url }}?category={{ category[0] | uri_escape }}#posts">{{ category[0] | escape }}</a></li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

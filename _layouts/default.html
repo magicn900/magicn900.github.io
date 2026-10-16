@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'zh-CN' }}">
+  {%- include head.html -%}
+  <body class="layout-{{ page.layout | escape }}" data-site-navigation="1">
+    <a class="skip-link" href="#page-content">跳到正文</a>
+    {%- include views/header.html -%}
+    {%- include views/banner.html -%}
+    <main id="page-content" class="page-content" aria-label="正文" tabindex="-1">
+      <div class="wrapper">{{ content }}</div>
+    </main>
+    {%- include views/footer.html -%}
+    {%- include extensions/photo-swipe.html -%}
+  </body>
+</html>

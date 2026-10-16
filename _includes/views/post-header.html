@@ -1,0 +1,7 @@
+<header class="post-header">
+  <a class="post-back" href="{{ '/' | relative_url }}">← 返回首页</a>
+  <p class="post-meta"><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: '%Y.%m.%d' }}</time>{% for category in page.categories %} · {{ category | escape }}{% endfor %}</p>
+  <h1 class="post-title p-name" itemprop="name headline">{{ heading | default: page.title | escape }}</h1>
+  {% if page.subtitle %}<p class="post-subtitle">{{ page.subtitle | escape }}</p>{% endif %}
+  <div class="post-tags">{% for tag in page.tags %}<a class="post-tag" href="{{ '/tags/' | relative_url }}#{{ tag | uri_escape }}">#{{ tag | escape }}</a>{% endfor %}</div>
+</header>

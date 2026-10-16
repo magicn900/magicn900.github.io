@@ -1,0 +1,14 @@
+{%- assign keys = include.keys | default: keys -%}
+{%- assign field = include.field | default: field -%}
+{%- case field -%}
+  {%- when 'tags' -%}{%- assign list_url = '/tags/' -%}
+  {%- when 'date' -%}{%- assign list_url = '/archives/' -%}
+  {%- else -%}{%- assign list_url = '/' -%}
+{%- endcase -%}
+<nav class="common-list" aria-label="文章分组">
+  <ul><li><a href="{{ '/' | relative_url }}">全部 <span>{{ site.posts.size }}</span></a></li>
+  {%- for key in keys -%}
+    <li><a href="{{ list_url | relative_url }}{% if list_url == '/' %}?category={{ key | uri_escape }}#posts{% else %}#{{ key | uri_escape }}{% endif %}">{{ key | escape }} <span>{{ site.posts | where: field, key | size }}</span></a></li>
+  {%- endfor -%}
+  </ul>
+</nav>

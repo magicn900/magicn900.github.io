@@ -1,0 +1,37 @@
+{%- include functions.html func='get_banner' -%}
+{%- assign name = 'header_transparent' -%}
+{%- include functions.html func='get_value' default=true -%}
+{%- assign header_transparent = return -%}
+{%- assign name = 'night_mode' -%}
+{%- include functions.html func='get_value' default='auto' -%}
+{%- assign night_mode_option = return -%}
+<header class="site-header{% if has_banner and header_transparent %} site-header-transparent{% endif %}" role="banner">
+  <div class="wrapper">
+    <div class="site-header-inner">
+      <span class="site-brand">{%- include views/site-brand.html -%}</span>
+      <nav class="site-nav" aria-label="主导航">
+        <button class="nav-menu-button" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="打开导航菜单" hidden><span aria-hidden="true">☰</span></button>
+        <div class="trigger" id="site-navigation">
+          {%- assign default_paths = site.pages | where: 'dir', '/' | map: 'path' -%}
+          {%- assign page_paths = site.header_pages | default: default_paths -%}
+          {%- for path in page_paths -%}
+            {%- assign nav_page = site.pages | where: 'path', path | first -%}
+            {%- if nav_page.title -%}
+            <a class="page-link" href="{{ nav_page.url | relative_url }}"{% if page.url == nav_page.url %} aria-current="page"{% endif %}>{{ nav_page.title | escape }}</a>
+            {%- endif -%}
+          {%- endfor -%}
+          {%- assign name = 'translate_langs' -%}
+          {%- include functions.html func='get_value' -%}
+          {%- assign translate_langs = return -%}
+          {%- if translate_langs.size > 0 -%}
+            {%- assign name = 'lang' -%}
+            {%- include functions.html func='get_value' default='zh-CN' -%}
+            {%- assign lang = return -%}
+            <div class="page-link language-menu">{% include extensions/google-translate.html %}</div>
+          {%- endif -%}
+        </div>
+      </nav>
+      <button class="header-theme-toggle" type="button" data-night-mode="{{ night_mode_option }}" aria-label="切换深浅主题" hidden><span class="theme-symbol" aria-hidden="true">☾</span></button>
+    </div>
+  </div>
+</header>

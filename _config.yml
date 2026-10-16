@@ -59,7 +59,6 @@ reading_time:
 header_pages:
   - index.markdown
   - about.markdown
-  - categories.md
   - archives.md
   - tags.md
 
