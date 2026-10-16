@@ -4,48 +4,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
   {%- seo -%}
+  {%- assign name = 'night_mode' -%}
+  {%- include functions.html func='get_value' default='auto' -%}
+  {%- assign initial_night_mode = return -%}
+  <!-- 与主题开关使用同一配置；在样式和加载遮罩出现前恢复主题。 -->
+  <script>
+    (function() {
+      var nightModeOption = String({{ initial_night_mode | jsonify }}).toLowerCase();
+      var themeData = {};
+      
+      try {
+        var storage = nightModeOption === 'manual' ? localStorage : sessionStorage;
+        var data = storage.getItem('theme');
+        themeData = JSON.parse(data || '{}') || {};
+      } catch(e) {
+        // 存储不可用时仍按站点配置显示。
+      }
+      
+      var nightShift = nightModeOption === 'on';
+      if (nightModeOption === 'auto') {
+        var now = new Date();
+        var hours = now.getHours();
+        nightShift = hours >= 19 || hours <= 7;
+        var toggleAt = new Date(now);
+        if (nightShift && hours > 7) toggleAt.setDate(toggleAt.getDate() + 1);
+        toggleAt.setHours(nightShift ? 7 : 19, 0, 0, 0);
+        if (toggleAt.getTime() <= (themeData.autoToggleAt || 0) &&
+            typeof themeData.nightShift === 'boolean') {
+          nightShift = themeData.nightShift;
+        }
+      } else if (typeof themeData.nightShift === 'boolean') {
+        nightShift = themeData.nightShift;
+      }
+      
+      document.documentElement.setAttribute('data-theme', nightShift ? 'dark' : 'light');
+    })();
+  </script>
   <link rel="icon" href="{{ site.favicon }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/my-kawaii-style.css' | relative_url }}">
-  <!-- 页面加载优化脚本 - 必须在CSS加载后立即执行 -->
+  <!-- 配色准备好后再显示加载动画。 -->
   <script src="{{ '/assets/js/page-loading-optimizer.js' | relative_url }}"></script>
-  <!-- 防止主题闪烁的内联脚本 - 必须在CSS加载后立即执行 -->
-  <script>
-    (function() {
-      var nightModeOption = '{{ site.yat.night_mode | default: "false" }}';
-      var storage = nightModeOption === 'manual' ? localStorage : sessionStorage;
-      var themeData;
-      
-      try {
-        var data = storage.getItem('theme');
-        themeData = JSON.parse(data || '{}');
-      } catch(e) {
-        themeData = { nightShift: false };
-      }
-      
-      // 根据配置和存储的主题设置初始主题，避免闪烁
-      var nightShift = false;
-      
-      if (nightModeOption === 'auto') {
-        var hours = new Date().getHours();
-        nightShift = hours >= 19 || hours <= 7;
-      } else if (nightModeOption === 'manual') {
-        nightShift = themeData.nightShift || false;
-      } else {
-        nightShift = nightModeOption === 'on' || nightModeOption === 'true';
-      }
-      
-      // 如果有存储的主题设置，优先使用
-      if (themeData.nightShift !== undefined) {
-        nightShift = themeData.nightShift;
-      }
-      
-      // 立即设置主题，避免闪烁
-      document.documentElement.setAttribute('data-theme', nightShift ? 'dark' : 'light');
-    })();
-  </script>
   <script src="{{ "/assets/js/main.js" | relative_url }}"></script>
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
